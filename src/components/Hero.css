@@ -1,0 +1,165 @@
+
+.hero-section {
+  position: relative;
+  height: 90vh; /* Ocupa 90% da altura da tela */
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* --- Camada de Vídeo de Fundo --- */
+.image-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%; /* largura extra pro movimento */
+  height: 100%;
+  background-image: url('./src/assets/hero-background.jpg');
+  background-size: auto 100%; /* mantém proporção */
+  background-repeat: repeat-x; /* repete horizontalmente */
+  background-position: 0 center;
+  animation: pan-horizontal 60s linear infinite; /* duração maior = movimento suave */
+  z-index: 0;
+}
+
+@keyframes pan-horizontal {
+  from {
+    background-position: 0 center;
+  }
+  to {
+    background-position: -100% center;
+  }
+}
+
+/* Sobreposição escura para legibilidade */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* --- Camada de Overlay (para escurecer o vídeo) --- */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 24, 39, 0.7);
+  z-index: 2;
+}
+
+/* --- Camada de Conteúdo --- */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 999px; /* Pílula */
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo da palavra dinâmica */
+.dynamic-word {
+  color: #ffffff;
+}
+
+/* Animação do cursor de digitação */
+.cursor {
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #e5e7eb;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+.hero-cta-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Botão Principal */
+.hero-cta-primary {
+  background-color: #ffffff;
+  color: #111827;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 16px 40px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-cta-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão/Link Secundário */
+.hero-cta-secondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.hero-cta-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsividade para o título em telas menores */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-cta-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

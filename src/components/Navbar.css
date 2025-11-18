@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+
+/* ======= NAVBAR ======= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 1000;
+  transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Estilo da navbar quando o usuário rola a página */
+.navbar.scrolled {
+  padding: 15px 0;
+  background-color: rgba(255, 255, 255, 0.8); /* Fundo branco translúcido */
+  backdrop-filter: blur(10px); /* Efeito de vidro (glassmorphism) */
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937; 
+  text-decoration: none;
+}
+.navbar.scrolled .navbar-logo {
+  color: #1f2937;
+}
+/* No topo, sobre o Hero, a logo pode ser branca se o fundo for escuro */
+.navbar:not(.scrolled) .navbar-logo {
+  color: #ffffff;
+}
+
+
+/* --- Links de Navegação --- */
+.nav-menu {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #d1d5db; /* Cinza claro para o estado inicial */
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+.navbar.scrolled .nav-link {
+  color: #4b5563; /* Cinza escuro quando rolado */
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+.navbar.scrolled .nav-link:hover {
+  color: #111827;
+}
+
+/* Efeito da linha no hover */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* --- Ações da Navbar --- */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.chat-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.chat-button:hover {
+  background-color: #25D366;
+  transform: scale(1.05);
+}
+
+/* --- Menu Mobile --- */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  color: #ffffff;
+}
+.navbar.scrolled .menu-icon {
+  color: #1f2937;
+}
+
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none; /* Esconde o menu desktop */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-menu.active {
+    display: flex; 
+  }
+
+  .nav-menu .nav-link {
+    color: #1f2937; 
+    padding: 15px 10px;
+    text-align: center;
+  }
+  
+  .menu-icon {
+    display: block; 
+  }
+  
+  .chat-button span {
+    display: none; 
+  }
+  .chat-button {
+    padding: 10px;
+  }
+}

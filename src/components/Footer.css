@@ -1,0 +1,97 @@
+.footer {
+  background-color: #111827;
+  color: #d1d5db;
+  padding: 60px 20px 0 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  /* Cria 4 colunas em telas grandes, 2 em médias e 1 em pequenas */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+.footer-column h4, .footer-column .footer-logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.footer-column.about p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul a {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-column ul a:hover {
+  color: #ffffff;
+  padding-left: 5px;
+}
+
+.footer-column.contact ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* --- Coluna de Redes Sociais --- */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #d1d5db;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* --- Barra Inferior --- */
+.footer-bottom {
+  border-top: 1px solid #374151;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* Responsividade para o grid em telas menores */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+  }
+  .footer-column {
+    text-align: center;
+  }
+  .footer-column.contact ul li, .social-icons {
+    justify-content: center;
+  }
+}

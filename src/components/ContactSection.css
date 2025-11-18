@@ -1,0 +1,121 @@
+.contact-section {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+}
+
+.contact-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-section .section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px auto;
+}
+
+.contact-section .section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.contact-section .section-header p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* --- Layout Dividido --- */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+/* --- Lado do Mapa --- */
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+/* --- Lado das Informações --- */
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* O card de endereço não é um link, então estilizamos separadamente */
+.address-card {
+  cursor: default;
+}
+.address-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.contact-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+/* Cores específicas para cada ícone */
+.contact-icon-wrapper.whatsapp { background-color: #25D366; }
+.contact-icon-wrapper.phone { background-color: #3b82f6; }
+.contact-icon-wrapper.email { background-color: #6366f1; }
+.contact-icon-wrapper.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.contact-icon-wrapper.address { background-color: #ef4444; }
+
+.contact-details h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #1f2937;
+}
+
+.contact-details p {
+  font-size: 1rem;
+  color: #4b5563;
+  margin: 0;
+  word-break: break-word; /* Garante que emails/links longos quebrem a linha */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 992px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}
