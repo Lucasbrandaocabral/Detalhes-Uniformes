@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Hero.css";
 import { ArrowDown } from "lucide-react";
+import heroBackground from "../assets/hero-background.jpg";
 
 const dynamicWords = ["Incomparável", "Garantida", "Excepcional"];
 
@@ -34,7 +35,11 @@ export default function HeroSection() {
   return (
     <section className="hero-section">
       {/* Imagem de fundo com pan horizontal */}
-      <div className="image-background"></div>
+      <div
+        className="image-background"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      > 
+      </div>
       <div className="hero-overlay"></div>
 
       <div className="hero-content">
