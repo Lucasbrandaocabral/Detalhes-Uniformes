@@ -18,7 +18,7 @@
   left: 0;
   width: 200%; /* largura extra pro movimento */
   height: 100%;
-  background-image: url('./src/assets/hero-background.jpg');
+  background-image: url('/hero-background.jpg');
   background-size: auto 100%; /* mantém proporção */
   background-repeat: repeat-x; /* repete horizontalmente */
   background-position: 0 center;
