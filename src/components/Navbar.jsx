@@ -44,8 +44,15 @@ export default function Navbar() {
   return (
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        {/* --- Logo --- */}
-        <a href="/" className="navbar-logo">
+        <a
+          href="#"
+          className="navbar-logo"
+          onClick={(e) => {
+            e.preventDefault();
+            setIsMenuOpen(false); // fecha o menu mobile
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
           Detalhes Uniformes
         </a>
 
@@ -64,7 +71,7 @@ export default function Navbar() {
           <button
             className="chat-button"
             onClick={() => {
-              window.open("https://wa.me/5511912345678", "_blank");
+              window.open("https://wa.me/+551120350589", "_blank");
             }}
             >
             <MessageCircle size={20} />
