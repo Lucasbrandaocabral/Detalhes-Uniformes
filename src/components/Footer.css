@@ -39,12 +39,17 @@
 .footer-column ul a {
   color: #d1d5db;
   text-decoration: none;
-  transition: color 0.3s ease, padding-left 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-.footer-column ul a:hover {
+.footer-column.links ul a:hover {
   color: #ffffff;
-  padding-left: 5px;
+  padding-left: 5px; 
+  transition: color 0.3s ease, padding-left 0.3s ease; 
+}
+
+.footer-column.contact ul a:hover {
+  color: #ffffff;
 }
 
 .footer-column.contact ul li {
@@ -53,7 +58,10 @@
   gap: 10px;
 }
 
-/* --- Coluna de Redes Sociais --- */
+.footer-column.contact svg {
+  flex-shrink: 0; 
+}
+
 .social-icons {
   display: flex;
   gap: 15px;

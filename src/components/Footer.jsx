@@ -42,9 +42,9 @@ export default function Footer() {
 
         {/* --- Coluna 4: Redes Sociais --- */}
         <div className="footer-column social">
-          <h4>Siga-nos</h4>
+          <h4></h4>
           <div className="social-icons">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            {/*<a href="https://www.instagram.com/detalhesuniformes" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <Instagram size={24} />
             </a>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -52,7 +52,7 @@ export default function Footer() {
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <Linkedin size={24} />
-            </a>
+            </a>*/}
           </div>
         </div>
       </div>

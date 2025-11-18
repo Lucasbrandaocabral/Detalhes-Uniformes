@@ -2,83 +2,79 @@ import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { MessageCircle, Menu, X } from 'lucide-react';
 
+const whatsappInfo = {
+  number: "+551120350589", 
+  message: "Olá! Gostaria de solicitar um orçamento." 
+};
+
 export default function Navbar() {
-  // State para controlar o fundo da navbar no scroll
   const [isScrolled, setIsScrolled] = useState(false);
-  // State para controlar a abertura do menu mobile
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuClosing, setIsMenuClosing] = useState(false);
 
-  // Função para abrir o chatbot
-  const handleChatClick = () => {
-    alert("Abrindo o assistente virtual..."); 
-  };
-
-  // Efeito para detectar o scroll da página
   useEffect(() => {
     const handleScroll = () => {
-      // Se o scroll for maior que 10px, muda o estado
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
-
-    // Adiciona o listener de evento de scroll
     window.addEventListener('scroll', handleScroll);
-
-    // Limpa o listener quando o componente é desmontado
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-    setIsMenuOpen(false); // fecha o menu no mobile
-  }
+  const handleToggleMenu = () => {
+    if (isMenuOpen) {
+      setIsMenuClosing(true);
+      setTimeout(() => {
+        setIsMenuOpen(false);
+        setIsMenuClosing(false);
+      }, 400);
+    } else {
+      setIsMenuOpen(true);
+    }
   };
+
+  const handleLinkClick = () => {
+    if (isMenuOpen) {
+      handleToggleMenu();
+    }
+  };
+
+  // 2. Cria a URL completa para o link do WhatsApp
+  const whatsappUrl = `https://wa.me/${whatsappInfo.number}?text=${encodeURIComponent(whatsappInfo.message )}`;
 
   return (
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        <a
+        <a 
           href="#"
           className="navbar-logo"
           onClick={(e) => {
-            e.preventDefault();
-            setIsMenuOpen(false); // fecha o menu mobile
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            e.preventDefault();             // impede o reload
+            window.scrollTo({ top: 0, behavior: "smooth" }); 
+            if (isMenuOpen) handleToggleMenu(); // fecha o menu mobile
           }}
         >
           Detalhes Uniformes
         </a>
 
-        {/* --- Links de Navegação (Desktop) --- */}
-        <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          <a href="#services" className="nav-link" onClick={() => setIsMenuOpen(false)}>Serviços</a>
-          <a href="#about" className="nav-link" onClick={() => setIsMenuOpen(false)}>Sobre</a>
-          <a href="#tecidos" className="nav-link" onClick={() => setIsMenuOpen(false)}>Tecidos</a>
-          <a href="#testimonials" className="nav-link" onClick={() => setIsMenuOpen(false)}>Depoimentos</a>
-          <a href="#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contato</a>
+        <nav className={`nav-menu ${isMenuOpen ? 'active' : ''} ${isMenuClosing ? 'closing' : ''}`}>
+          <a href="#services" className="nav-link" onClick={handleLinkClick}>Serviços</a>
+          <a href="#about" className="nav-link" onClick={handleLinkClick}>Sobre</a>
+          <a href="#testimonials" className="nav-link" onClick={handleLinkClick}>Depoimentos</a>
+          <a href="#contact" className="nav-link" onClick={handleLinkClick}>Contato</a>
         </nav>
 
-
-        {/* --- Botão de Chat e Ícone do Menu Mobile --- */}
         <div className="navbar-actions">
-          <button
-            className="chat-button"
-            onClick={() => {
-              window.open("https://wa.me/+551120350589", "_blank");
-            }}
-            >
+          <a 
+            href={whatsappUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="chat-button whatsapp-button"
+          >
             <MessageCircle size={20} />
-            <span>Entre em contato</span>
-          </button>
+            <span>Fale no WhatsApp</span>
+          </a>
           
-          <div className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <div className="menu-icon" onClick={handleToggleMenu}>
             {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
           </div>
         </div>
