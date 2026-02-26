@@ -9,6 +9,13 @@ import 'swiper/css/autoplay';
 
 import './TestimonialsSection.css';
 
+import logoComunidade from '../assets/logos/colegio-da-comunidade.png';
+import logoRodrigues from '../assets/logos/colegio-alheambra-rodrigues.png';
+import logoItaquera from '../assets/logos/colegio-evangelico-de-itaquera.png';
+import logoInovacao from '../assets/logos/colegio-inovaçao.png';
+import logoMania from '../assets/logos/Colégio-Mania-de-Aprender.png';
+import logoVisao from '../assets/logos/Colégio-Mega-Visão.png';
+
 // Ícone para as aspas do depoimento
 import { Quote } from 'lucide-react';
 
@@ -35,12 +42,12 @@ const testimonialsData = [
 ];
 
 const logosData = [
-  { id: 1, src: "/assets/logos/colegio-aprender.png", alt: "Colégio Aprender Mais" },
-  { id: 2, src: "/assets/logos/escola-crescer.png", alt: "Escola Crescer" },
-  { id: 3, src: "/assets/logos/instituto-educar.png", alt: "Instituto Educar" },
-  { id: 4, src: "/assets/logos/colegio-futuro.png", alt: "Colégio Futuro" },
-  { id: 5, src: "/assets/logos/escola-nova-geracao.png", alt: "Escola Nova Geração" },
-  { id: 6, src: "/assets/logos/instituto-saber.png", alt: "Instituto Saber" },
+  { id: 1, src: logoComunidade, alt: "Colégio da Comunidade" },
+  { id: 2, src: logoRodrigues, alt: "Colégio Alheambra Rodrigues" },
+  { id: 3, src: logoItaquera, alt: "Colégio Evangelico de Itaquera" },
+  { id: 4, src: logoInovacao, alt: "Colégio Inovação" },
+  { id: 5, src: logoMania, alt: "Colégio Mania de Aprender" },
+  { id: 6, src: logoVisao, alt: "Colégio Mega Visão" },
 ];
 
 // --- Componente Principal ---
