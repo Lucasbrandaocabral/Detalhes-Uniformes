@@ -9,12 +9,12 @@ import 'swiper/css/autoplay';
 
 import './TestimonialsSection.css';
 
-import logoComunidade from '../assets/logos/Colegio-da-Comunidade.png';
+import logoComunidade from '../assets/logos/colegio-da-Comunidade.png';
 import logoRodrigues from '../assets/logos/colegio-alheambra-rodrigues.png';
 import logoItaquera from '../assets/logos/colegio-evangelico-de-itaquera.png';
 import logoInovacao from '../assets/logos/colegio-inovacao.png';
-import logoMania from '../assets/logos/Colegio-Mania-de-Aprender.png';
-import logoVisao from '../assets/logos/Colegio-Mega-Visao.png';
+import logoMania from '../assets/logos/colegio-Mania-de-Aprender.png';
+import logoVisao from '../assets/logos/colegio-Mega-Visao.png';
 
 // Ícone para as aspas do depoimento
 import { Quote } from 'lucide-react';
