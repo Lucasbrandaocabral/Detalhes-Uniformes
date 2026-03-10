@@ -7,6 +7,7 @@
 
 /* --- Botão Flutuante --- */
 .chat-toggle-btn {
+  margin-top: 10px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -80,12 +81,14 @@
 .message {
   display: flex;
   align-items: flex-end;
+  padding: 5px 5px;
+  border-radius: 5px 0px 5px 5px;
   gap: 10px;
 }
 
 .message.bot {
-  background-color: #f3f4f6;
-  color: #1f2937;
+  background-color: #E6F0FA;
+  color: #333333;
   border-bottom-left-radius: 4px;
   align-self: flex-start;
 }
