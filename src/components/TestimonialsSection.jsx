@@ -24,19 +24,19 @@ const testimonialsData = [
   {
     name: "Maria Silva",
     title: "Diretora, Colégio Aprender Mais",
-    avatar: "/assets/avatars/#",
+    avatar: "/assets/avatars/maria-silva.jpg",
     text: "A parceria com a Detalhes Uniformes foi um divisor de águas. A qualidade do material é excepcional e a entrega programada nos deu uma tranquilidade que não tínhamos com outros fornecedores."
   },
   {
     name: "João Pereira",
     title: "Coordenador, Escola Crescer",
-    avatar: "/assets/avatars/#",
+    avatar: "/assets/avatars/joao-pereira.jpg",
     text: "O atendimento personalizado fez toda a diferença. Eles entenderam nossa necessidade e entregaram uniformes com um caimento perfeito e cores fiéis à nossa identidade visual. Recomendo!"
   },
   {
     name: "Ana Costa",
     title: "Gerente Adm., Instituto Educar",
-    avatar: "/assets/avatars/#",
+    avatar: "/assets/avatars/ana-costa.jpg",
     text: "Qualidade, pontualidade e um ótimo custo-benefício. Os pais dos alunos elogiaram muito o conforto e a durabilidade dos novos uniformes. Estamos muito satisfeitos."
   }
 ];
