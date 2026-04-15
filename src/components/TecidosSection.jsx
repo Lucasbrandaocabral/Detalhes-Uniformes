@@ -4,11 +4,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import "./TecidosSection.css"; 
-import algodaoImg from '../assets/algodao.jpg';
-import dryFitImg from '../assets/dry-fit.jpg';
-import piquetImg from '../assets/piquet.jpg';
-import gabardineImg from '../assets/gabardine.jpg';
-import oxfordLightImg from '../assets/oxford-light.jpg'; 
 
 import { 
   Leaf, 
@@ -32,7 +27,7 @@ const tecidosData = [
   {
     id: 1,
     nome: 'Algodão 100%',
-    imagem: algodaoImg,
+    imagem: '/Detalhes-Uniformes/assets/algodao.jpg',
     beneficios: [
       { Icone: Leaf, texto: 'Natural' },
       { Icone: Cloud, texto: 'Conforto' },
@@ -42,7 +37,7 @@ const tecidosData = [
   {
     id: 2,
     nome: 'Dry-Fit',
-    imagem: dryFitImg,
+    imagem: '/Detalhes-Uniformes/assets/dry-fit.jpg',
     beneficios: [
       { Icone: Wind, texto: 'Secagem Rápida' },
       { Icone: Feather, texto: 'Leveza' },
@@ -52,7 +47,7 @@ const tecidosData = [
   {
     id: 3,
     nome: 'Piquet',
-    imagem: piquetImg,
+    imagem: '/Detalhes-Uniformes/assets/piquet.jpg',
     beneficios: [
       { Icone: StretchHorizontal, texto: 'Elasticidade' },
       { Icone: Waves, texto: 'Textura' },
@@ -62,7 +57,7 @@ const tecidosData = [
   {
     id: 4,
     nome: 'Gabardine',
-    imagem: gabardineImg,
+    imagem: '/Detalhes-Uniformes/assets/gabardine.jpg',
     beneficios: [
       { Icone: ShieldCheck, texto: 'Durabilidade' },
       { Icone: Waves, texto: 'Caimento' },
@@ -72,7 +67,7 @@ const tecidosData = [
   {
   id: 5,
   nome: 'Oxford Light',
-  imagem: oxfordLightImg,
+  imagem: '/Detalhes-Uniformes/assets/oxford-light.jpg',
   beneficios: [
     { Icone: Wind, texto: 'Respirável' },
     { Icone: Settings, texto: 'Fácil de cuidar' },

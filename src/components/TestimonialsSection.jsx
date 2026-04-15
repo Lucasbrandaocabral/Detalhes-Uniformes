@@ -9,17 +9,6 @@ import 'swiper/css/autoplay';
 
 import './TestimonialsSection.css';
 
-import mariaAvatar from '../assets/avatars/maria-silva.jpg';
-import joaoAvatar from '../assets/avatars/joao-pereira.jpg';
-import anaAvatar from '../assets/avatars/ana-costa.jpg';
-
-import logoComunidade from '../assets/logos/colegio-da-comunidade.png';
-import logoRodrigues from '../assets/logos/colegio-alheambra-rodrigues.png';
-import logoItaquera from '../assets/logos/colegio-evangelico-de-itaquera.png';
-import logoInovacao from '../assets/logos/colegio-inovacao.png';
-import logoMania from '../assets/logos/colegio-mania-de-aprender.png';
-import logoVisao from '../assets/logos/colegio-mega-visao.png';
-
 // Ícone para as aspas do depoimento
 import { Quote } from 'lucide-react';
 
@@ -28,30 +17,30 @@ const testimonialsData = [
   {
     name: "Maria Silva",
     title: "Diretora, Colégio Aprender Mais",
-    avatar: mariaAvatar,
+    avatar: '/Detalhes-Uniformes/assets/avatars/maria-silva.jpg',
     text: "A parceria com a Detalhes Uniformes foi um divisor de águas. A qualidade do material é excepcional e a entrega programada nos deu uma tranquilidade que não tínhamos com outros fornecedores."
   },
   {
     name: "João Pereira",
     title: "Coordenador, Escola Crescer",
-    avatar: joaoAvatar,
+    avatar: '/Detalhes-Uniformes/assets/avatars/joao-pereira.jpg',
     text: "O atendimento personalizado fez toda a diferença. Eles entenderam nossa necessidade e entregaram uniformes com um caimento perfeito e cores fiéis à nossa identidade visual. Recomendo!"
   },
   {
     name: "Ana Costa",
     title: "Gerente Adm., Instituto Educar",
-    avatar: anaAvatar,
+    avatar: '/Detalhes-Uniformes/assets/avatars/ana-costa.jpg',
     text: "Qualidade, pontualidade e um ótimo custo-benefício. Os pais dos alunos elogiaram muito o conforto e a durabilidade dos novos uniformes. Estamos muito satisfeitos."
   }
 ];
 
 const logosData = [
-  { id: 1, src: logoComunidade, alt: "Colégio da Comunidade" },
-  { id: 2, src: logoRodrigues, alt: "Colégio Alheambra Rodrigues" },
-  { id: 3, src: logoItaquera, alt: "Colégio Evangelico de Itaquera" },
-  { id: 4, src: logoInovacao, alt: "Colégio Inovação" },
-  { id: 5, src: logoMania, alt: "Colégio Mania de Aprender" },
-  { id: 6, src: logoVisao, alt: "Colégio Mega Visão" },
+  { id: 1, src: '/Detalhes-Uniformes/assets/logos/colegio-da-comunidade.png', alt: "Colégio da Comunidade" },
+  { id: 2, src: '/Detalhes-Uniformes/assets/logos/colegio-alheambra-rodrigues.png', alt: "Colégio Alheambra Rodrigues" },
+  { id: 3, src: '/Detalhes-Uniformes/assets/logos/colegio-evangelico-de-itaquera.png', alt: "Colégio Evangelico de Itaquera" },
+  { id: 4, src: '/Detalhes-Uniformes/assets/logos/colegio-inovacao.png', alt: "Colégio Inovação" },
+  { id: 5, src: '/Detalhes-Uniformes/assets/logos/colegio-mania-de-aprender.png', alt: "Colégio Mania de Aprender" },
+  { id: 6, src: '/Detalhes-Uniformes/assets/logos/colegio-mega-visao.png', alt: "Colégio Mega Visão" },
 ];
 
 // --- Componente Principal ---
