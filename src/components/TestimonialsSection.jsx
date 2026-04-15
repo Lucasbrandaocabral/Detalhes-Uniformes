@@ -9,6 +9,10 @@ import 'swiper/css/autoplay';
 
 import './TestimonialsSection.css';
 
+import mariaAvatar from '../assets/avatars/maria-silva.jpg';
+import joaoAvatar from '../assets/avatars/joao-pereira.jpg';
+import anaAvatar from '../assets/avatars/ana-costa.jpg';
+
 import logoComunidade from '../assets/logos/colegio-da-comunidade.png';
 import logoRodrigues from '../assets/logos/colegio-alheambra-rodrigues.png';
 import logoItaquera from '../assets/logos/colegio-evangelico-de-itaquera.png';
@@ -24,19 +28,19 @@ const testimonialsData = [
   {
     name: "Maria Silva",
     title: "Diretora, Colégio Aprender Mais",
-    avatar: "/assets/avatars/maria-silva.jpg",
+    avatar: mariaAvatar,
     text: "A parceria com a Detalhes Uniformes foi um divisor de águas. A qualidade do material é excepcional e a entrega programada nos deu uma tranquilidade que não tínhamos com outros fornecedores."
   },
   {
     name: "João Pereira",
     title: "Coordenador, Escola Crescer",
-    avatar: "/assets/avatars/joao-pereira.jpg",
+    avatar: joaoAvatar,
     text: "O atendimento personalizado fez toda a diferença. Eles entenderam nossa necessidade e entregaram uniformes com um caimento perfeito e cores fiéis à nossa identidade visual. Recomendo!"
   },
   {
     name: "Ana Costa",
     title: "Gerente Adm., Instituto Educar",
-    avatar: "/assets/avatars/ana-costa.jpg",
+    avatar: anaAvatar,
     text: "Qualidade, pontualidade e um ótimo custo-benefício. Os pais dos alunos elogiaram muito o conforto e a durabilidade dos novos uniformes. Estamos muito satisfeitos."
   }
 ];
