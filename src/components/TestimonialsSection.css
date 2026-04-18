@@ -1,6 +1,7 @@
 .testimonials-section {
-  padding: 80px 20px;
+  padding: 100px 20px;
   background-color: #ffffff;
+  overflow: hidden;
 }
 
 .testimonials-section .container {
@@ -12,6 +13,16 @@
   text-align: center;
   max-width: 700px;
   margin: 0 auto 60px auto;
+}
+
+.testimonials-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #3730a3;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
 }
 
 .testimonials-section .section-header h2 {
@@ -27,49 +38,56 @@
   line-height: 1.6;
 }
 
-/* --- Estilos do Carrossel de Depoimentos --- */
+/* --- Swiper de Depoimentos --- */
 .testimonials-swiper {
-  padding-bottom: 60px; /* Espaço para a paginação */
+  padding: 0 56px 60px 56px;
+}
+
+.testimonial-slide {
+  height: auto;
 }
 
 .testimonial-card {
   background-color: #f8f9fa;
+  border: 1px solid #e5e7eb;
   border-radius: 16px;
-  padding: 40px;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
+  padding: 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.testimonial-card .quote-icon {
-  color: #3730a3;
-  opacity: 0.3;
-  margin-bottom: 20px;
+/* --- Estrelas --- */
+.star-rating {
+  display: flex;
+  gap: 4px;
 }
 
 .testimonial-text {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-style: italic;
-  line-height: 1.7;
+  line-height: 1.75;
   color: #374151;
-  margin-bottom: 30px;
+  flex: 1;
 }
 
 .author-info {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 15px;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
 }
 
 .author-avatar {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e0e7ff;
+  flex-shrink: 0;
 }
 
 .author-details {
@@ -79,50 +97,98 @@
 .author-name {
   display: block;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #1f2937;
 }
 
 .author-title {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #6b7280;
+  margin-top: 2px;
 }
 
-/* Customização dos controles do Swiper de depoimentos */
+/* --- Controles do swiper --- */
 .testimonials-swiper .swiper-button-next,
 .testimonials-swiper .swiper-button-prev {
-  color: #007bff;
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  color: #3730a3;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
+
 .testimonials-swiper .swiper-button-next:hover,
-.testimonials-swiper .swiper-button-prev:hover{
+.testimonials-swiper .swiper-button-prev:hover {
+  background-color: #3730a3;
   color: #ffffff;
+  border-color: #3730a3;
+  box-shadow: 0 4px 16px rgba(55, 48, 163, 0.3);
+}
+
+.testimonials-swiper .swiper-button-next::after,
+.testimonials-swiper .swiper-button-prev::after {
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .testimonials-swiper .swiper-pagination-bullet-active {
-  background-color: #007bff;
+  background-color: #3730a3;
 }
 
-.testimonials-swiper .swiper-button-next svg,
-.testimonials-swiper .swiper-button-prev svg {
-  width: 25px !important;
-  height: 25px !important;
-  font-weight: bold;
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 60px 16px;
+  }
+
+  .testimonials-swiper {
+    padding: 0 0 50px 0;
+  }
+
+  .testimonials-swiper .swiper-button-next,
+  .testimonials-swiper .swiper-button-prev {
+    display: none;
+  }
+
+  .testimonials-section .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .testimonials-section .section-header p {
+    font-size: 1rem;
+  }
+
+  .logos-container {
+    margin-top: 50px;
+  }
 }
 
-/* --- Estilos do Carrossel de Logos --- */
+@media (max-width: 480px) {
+  .testimonial-card {
+    padding: 24px 18px;
+  }
+
+  .testimonials-section .section-header {
+    margin-bottom: 40px;
+  }
+}
+
+/* --- Logos --- */
 .logos-container {
   margin-top: 80px;
   text-align: center;
 }
 
 .logos-title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
-  color: #6b7280;
+  color: #9ca3af;
   margin-bottom: 40px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .logo-slide {
@@ -132,14 +198,14 @@
 }
 
 .logo-slide img {
-  max-width: 150px;
+  max-width: 140px;
   height: auto;
-  opacity: 0.6; /* Deixa os logos mais sutis */
-  filter: grayscale(100%); /* Efeito preto e branco */
+  opacity: 0.5;
+  filter: grayscale(100%);
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 .logo-slide img:hover {
   opacity: 1;
-  filter: grayscale(0%); /* Remove o efeito no hover */
+  filter: grayscale(0%);
 }

@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import "./TecidosSection.css"; 
+// Removed image imports to avoid resolution errors. Using placeholder URLs instead.
 
 import { 
   Leaf, 
@@ -65,14 +66,14 @@ const tecidosData = [
     descricao: 'Tecido encorpado e resistente, indicado para uniformes profissionais que exigem durabilidade.',
   },
   {
-  id: 5,
-  nome: 'Oxford Light',
-  imagem: '/Detalhes-Uniformes/assets/oxford-light.jpg',
-  beneficios: [
-    { Icone: Wind, texto: 'Respirável' },
-    { Icone: Settings, texto: 'Fácil de cuidar' },
-  ],
-  descricao: 'Tecido leve e elegante, ideal para camisas e uniformes sociais, com ótimo caimento e conforto térmico.',
+    id: 5,
+    nome: 'Oxford Light',
+    imagem: '/Detalhes-Uniformes/assets/oxford-light.jpg',
+    beneficios: [
+      { Icone: Wind, texto: 'Respirável' },
+      { Icone: Settings, texto: 'Fácil de cuidar' },
+    ],
+    descricao: 'Tecido leve e elegante, ideal para camisas e uniformes sociais, com ótimo caimento e conforto térmico.',
   },
 ];
 
@@ -105,10 +106,13 @@ export default function TecidosSection() {
   return (
     <section className="tecidos-section">
       <div className="container">
-        <h2 className="section-title">Qualidade que se Sente na Pele</h2>
-        <p className="section-subtitle">
-          Deslize para conhecer os materiais que garantem conforto, durabilidade e uma aparência impecável.
-        </p>
+        <div className="tecidos-header">
+          <span className="tecidos-label">Nossos Materiais</span>
+          <h2 className="section-title">Qualidade que se Sente na Pele</h2>
+          <p className="section-subtitle">
+            Deslize para conhecer os materiais que garantem conforto, durabilidade e uma aparência impecável.
+          </p>
+        </div>
 
         <Swiper
           // Módulos a serem utilizados

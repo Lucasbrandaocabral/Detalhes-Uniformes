@@ -1,128 +1,159 @@
 .why-choose-section {
-  padding: 80px 20px;
-  background-color: #ffffff;
+  padding: 100px 20px;
+  background-color: #f8f9fa;
 }
 
-/* Centraliza o cabeçalho da seção */
-.why-choose-section .section-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 60px auto;
+.why-choose-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
 }
 
-.why-choose-section .section-header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #333;
+/* --- COLUNA ESQUERDA --- */
+.why-choose-left {
+  position: sticky;
+  top: 100px;
+}
+
+.why-choose-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #3730a3;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   margin-bottom: 16px;
 }
 
-.why-choose-section .section-header p {
-  font-size: 1.1rem;
-  color: #666;
-  line-height: 1.6;
+.why-choose-left h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.3;
+  margin-bottom: 20px;
 }
 
-/* A grade para os cartões de vantagens */
-.advantages-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
-  justify-content: center; /* Centraliza as colunas na linha */
-  gap: 30px;
-  margin-bottom: 60px;
+.why-choose-left p {
+  font-size: 1.05rem;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 36px;
 }
 
+.why-choose-cta-btn {
+  display: inline-block;
+  background-color: #111827;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
 
+.why-choose-cta-btn:hover {
+  background-color: #1f2937;
+  transform: scale(1.03);
+}
 
-/* Estilo de cada cartão de vantagem */
-.advantage-card {
-  background-color: #f8f9fa;
-  padding: 30px;
+/* --- COLUNA DIREITA: LISTA --- */
+.why-choose-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.advantage-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 24px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.advantage-item:first-child {
+  border-top: 1px solid #e5e7eb;
+}
+
+.advantage-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
   border-radius: 12px;
-  text-align: center;
-  border: 1px solid #e9ecef;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.advantage-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-}
-
-/* Círculo que envolve o ícone */
-.advantage-icon-wrapper {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 20px auto;
-  border-radius: 50%;
   background-color: #e0e7ff;
   color: #3730a3;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.2s ease;
 }
 
-.advantage-card h3 {
-  font-size: 1.25rem;
+.advantage-item:hover .advantage-icon {
+  background-color: #3730a3;
+  color: #ffffff;
+}
+
+.advantage-text h3 {
+  font-size: 1.05rem;
   font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
+  color: #1f2937;
+  margin-bottom: 6px;
 }
 
-.advantage-card p {
-  font-size: 1rem;
-  color: #555;
+.advantage-text p {
+  font-size: 0.95rem;
+  color: #6b7280;
   line-height: 1.6;
 }
 
-/* Estilo do Call-to-Action (CTA) */
-.why-choose-cta {
-  background-color: #111827; /* Fundo escuro */
-  color: #ffffff;
-  text-align: center;
-  padding: 40px;
-  border-radius: 12px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.why-choose-cta h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.why-choose-cta p {
-  font-size: 1.1rem;
-  margin-bottom: 24px;
-  opacity: 0.9;
-}
-
-.cta-button {
-  background-color: #ffffff;
-  color: #111827;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 12px 30px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.cta-button:hover {
-  transform: scale(1.05);
-  background-color: #f0f0f0;
-}
-
+/* --- RESPONSIVO --- */
 @media (max-width: 900px) {
-  .advantages-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .why-choose-section {
+    padding: 70px 20px;
+  }
+
+  .why-choose-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .why-choose-left {
+    position: static;
+  }
+
+  .why-choose-left h2 {
+    font-size: 2rem;
   }
 }
 
-@media (max-width: 600px) {
-  .advantages-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 500px) {
+  .why-choose-section {
+    padding: 56px 16px;
+  }
+
+  .why-choose-left h2 {
+    font-size: 1.7rem;
+  }
+
+  .why-choose-left p {
+    font-size: 1rem;
+  }
+
+  .advantage-item {
+    gap: 14px;
+    padding: 20px 0;
+  }
+
+  .advantage-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .why-choose-cta-btn {
+    display: block;
+    text-align: center;
   }
 }

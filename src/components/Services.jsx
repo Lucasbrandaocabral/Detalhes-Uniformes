@@ -1,27 +1,29 @@
 import "./Services.css";
-import { Shirt, Handshake, Truck, ShieldCheck } from 'lucide-react';
+import { Shirt, Scissors, Package, ShieldCheck } from "lucide-react";
+
+const whatsappUrl = `https://wa.me/551120350589?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
 
 const services = [
   {
     Icon: Shirt,
     title: "Uniformes Escolares",
-    description: "Confeccionamos uniformes de alta qualidade com materiais duráveis e confortáveis."
+    description: "Confecção completa de uniformes para escolas: camisetas, agasalhos, bermudas e mais, com materiais duráveis e confortáveis.",
   },
   {
-    Icon: Handshake,
-    title: "Atendimento Personalizado",
-    description: "Oferecemos suporte próximo e soluções sob medida para cada instituição de ensino."
+    Icon: Scissors,
+    title: "Bordados e Personalizações",
+    description: "Bordados precisos com a identidade visual da sua escola — logo, nome e cores com acabamento profissional.",
   },
   {
-    Icon: Truck,
-    title: "Entrega Rápida",
-    description: "Garantimos prazos ágeis e entregas em todo o território da zona leste de São Paulo."
+    Icon: Package,
+    title: "Pedidos por Encomenda",
+    description: "Produção sob medida para qualquer volume, do pedido pequeno ao fornecimento de toda a grade escolar.",
   },
   {
     Icon: ShieldCheck,
     title: "Qualidade Garantida",
-    description: "Cada peça passa por um rigoroso controle de qualidade antes de ser entregue."
-  }
+    description: "Cada peça passa por controle de qualidade rigoroso antes de ser entregue, garantindo padronização total.",
+  },
 ];
 
 export default function Services() {
@@ -29,8 +31,9 @@ export default function Services() {
     <section className="services-section">
       <div className="container">
         <div className="section-header">
+          <span className="services-label">O que fazemos</span>
           <h2>Nossos Serviços</h2>
-          <p>Conheça o que torna a Detalhes Uniformes referência no setor.</p>
+          <p>Soluções completas em uniformes escolares, do projeto à entrega.</p>
         </div>
         <div className="services-grid">
           {services.map((service, index) => (
@@ -42,6 +45,17 @@ export default function Services() {
               <p>{service.description}</p>
             </div>
           ))}
+        </div>
+        <div className="services-cta">
+          <p>Pronto para fazer o pedido da sua escola?</p>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="services-cta-btn"
+          >
+            Solicitar Orçamento
+          </a>
         </div>
       </div>
     </section>

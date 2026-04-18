@@ -3,6 +3,7 @@ import "./Hero.css";
 import { ArrowDown } from "lucide-react";
 
 const dynamicWords = ["Incomparável", "Garantida", "Excepcional"];
+const whatsappUrl = `https://wa.me/551120350589?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
 
 export default function HeroSection() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -53,7 +54,7 @@ export default function HeroSection() {
           ensino em toda zona leste de São Paulo.
         </p>
         <div className="hero-cta-container">
-          <button className="hero-cta-primary">Solicitar Orçamento</button>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hero-cta-primary">Solicitar Orçamento</a>
           <a href="#services" className="hero-cta-secondary">
             Conhecer Serviços <ArrowDown size={16} />
           </a>

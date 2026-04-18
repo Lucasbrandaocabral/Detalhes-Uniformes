@@ -14,6 +14,16 @@
   margin: 0 auto 60px auto;
 }
 
+.contact-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #3730a3;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
 .contact-section .section-header h2 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -93,7 +103,7 @@
 
 /* Cores específicas para cada ícone */
 .contact-icon-wrapper.whatsapp { background-color: #25D366; }
-.contact-icon-wrapper.phone { background-color: #3b82f6; }
+.contact-icon-wrapper.phone { background-color: #3730a3; }
 .contact-icon-wrapper.email { background-color: #6366f1; }
 .contact-icon-wrapper.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
 .contact-icon-wrapper.address { background-color: #ef4444; }
@@ -116,6 +126,49 @@
 @media (max-width: 992px) {
   .contact-layout {
     grid-template-columns: 1fr;
-    padding: 20px;
+    padding: 24px;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 16px;
+  }
+
+  .contact-section .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .contact-section .section-header p {
+    font-size: 1rem;
+  }
+
+  .map-container {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-layout {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .contact-section .section-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .contact-card {
+    gap: 14px;
+    padding: 12px;
+  }
+
+  .contact-details h4 {
+    font-size: 1rem;
+  }
+
+  .contact-details p {
+    font-size: 0.9rem;
   }
 }

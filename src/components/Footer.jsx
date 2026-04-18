@@ -1,6 +1,8 @@
 import './Footer.css';
 
-import { Instagram, Facebook, Linkedin, PhoneCall, Send } from 'lucide-react';
+import { Instagram, PhoneCall, Send, MessageCircle } from 'lucide-react';
+
+const whatsappUrl = `https://wa.me/551120350589?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,30 +10,34 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* --- Coluna 1: Logo e Descrição --- */}
+
         <div className="footer-column about">
           <h3 className="footer-logo">Detalhes Uniformes</h3>
-          <p>Qualidade e confiança em uniformes escolares e profissionais há mais de 15 anos.</p>
+          <p>Qualidade e confiança em uniformes escolares há mais de 15 anos na zona leste de São Paulo.</p>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="footer-whatsapp">
+            <MessageCircle size={16} />
+            Fale no WhatsApp
+          </a>
         </div>
 
-        {/* --- Coluna 2: Navegação --- */}
         <div className="footer-column links">
           <h4>Navegação</h4>
           <ul>
+            <li><a href="#about-us">Quem Somos</a></li>
             <li><a href="#services">Serviços</a></li>
-            <li><a href="#about">Sobre</a></li>
+            <li><a href="#about">Diferenciais</a></li>
+            <li><a href="#tecidos">Materiais</a></li>
             <li><a href="#testimonials">Depoimentos</a></li>
             <li><a href="#contact">Contato</a></li>
           </ul>
         </div>
 
-        {/* --- Coluna 3: Contato --- */}
         <div className="footer-column contact">
           <h4>Contato</h4>
           <ul>
             <li>
-              <Send  size={16} />
-              <a href="mailto:contato@detalhesuniformes.com.br">contato@detalhesuniformes.com.br</a>
+              <Send size={16} />
+              <a href="mailto:detalhesunif@gmail.com">detalhesunif@gmail.com</a>
             </li>
             <li>
               <PhoneCall size={16} />
@@ -40,27 +46,20 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* --- Coluna 4: Redes Sociais --- */}
         <div className="footer-column social">
-          <h4></h4>
+          <h4>Redes Sociais</h4>
           <div className="social-icons">
-            {/*<a href="https://www.instagram.com/detalhesuniformes" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/detalhesuniformes" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <Instagram size={24} />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <Facebook size={24} />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <Linkedin size={24} />
-            </a>*/}
           </div>
         </div>
+
       </div>
 
-      {/* --- Barra Inferior de Copyright --- */}
       <div className="footer-bottom">
-        <p>&copy; {currentYear} Lucas Brandão Cabral Todos os direitos reservados.</p>
+        <p>&copy; {currentYear} Detalhes Uniformes. Todos os direitos reservados.</p>
       </div>
     </footer>
-   );
+  );
 }

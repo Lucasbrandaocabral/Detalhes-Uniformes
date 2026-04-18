@@ -1,5 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import AboutSection from "./components/AboutSection";
+import StatsSection from "./components/StatsSection";
 import Services from "./components/Services";
 import WhyChoose from "./components/WhyChoose";
 import TecidosSection from "./components/TecidosSection";
@@ -15,6 +17,10 @@ function App() {
       <section id="hero">
         <Hero />
       </section>
+      <section id="about-us">
+        <AboutSection />
+      </section>
+      <StatsSection />
       <section id="services">
         <Services />
       </section>

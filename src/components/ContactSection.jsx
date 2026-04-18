@@ -21,6 +21,7 @@ export default function ContactSection( ) {
     <section className="contact-section">
       <div className="container">
         <div className="section-header">
+          <span className="contact-label">Fale Conosco</span>
           <h2>Entre em Contato</h2>
           <p>Estamos prontos para atender sua instituição. Escolha o melhor canal para você.</p>
         </div>
@@ -42,7 +43,7 @@ export default function ContactSection( ) {
 
           {/* --- LADO DIREITO: INFORMAÇÕES --- */}
           <div className="info-container">
-            <a href={`https://wa.me/${contactInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="contact-card">
+            <a href={`https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`} target="_blank" rel="noopener noreferrer" className="contact-card">
               <div className="contact-icon-wrapper whatsapp">
                 <MessageCircle size={24} />
               </div>
@@ -52,7 +53,7 @@ export default function ContactSection( ) {
               </div>
             </a>
 
-            <a href={`tel:${contactInfo.phone}`} className="contact-card">
+            <a href={`tel:${contactInfo.whatsapp}`} className="contact-card">
               <div className="contact-icon-wrapper phone">
                 <Phone size={24} />
               </div>
