@@ -13,7 +13,7 @@ export default function Footer() {
 
         <div className="footer-column about">
           <h3 className="footer-logo">Detalhes Uniformes</h3>
-          <p>Qualidade e confiança em uniformes escolares há mais de 15 anos na zona leste de São Paulo.</p>
+          <p>Qualidade e confiança em uniformes escolares há mais de 15 anos em toda São Paulo.</p>
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="footer-whatsapp">
             <MessageCircle size={16} />
             Fale no WhatsApp

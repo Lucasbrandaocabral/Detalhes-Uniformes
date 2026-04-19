@@ -1,22 +1,24 @@
 import './ContactSection.css';
 
-import { Phone, Mail, Instagram, MessageCircle, MapPin } from 'lucide-react';
+import { Phone, Mail, Instagram, MessageCircle, MapPin, Truck } from 'lucide-react';
 
-// --- Informações de Contato ---
 const contactInfo = {
   phone: "+55 11 2035-0589",
   whatsapp: "+551120350589",
   email: "detalhesunif@gmail.com",
   instagram: "https://www.instagram.com/detalhesuniformes",
-  address: "Rua"
 };
 
-// URL do Google Maps
-const mapUrl =
-  "https://www.google.com/maps/d/embed?mid=1SUYTwhZwSOfOr-UG1ynLt8_7ZPCuwKs&ehbc=2E312F&noprof=1";
+const zones = [
+  "Zona Norte",
+  "Zona Sul",
+  "Zona Leste",
+  "Zona Oeste",
+  "Centro",
+  "Grande SP",
+];
 
-
-export default function ContactSection( ) {
+export default function ContactSection() {
   return (
     <section className="contact-section">
       <div className="container">
@@ -27,21 +29,38 @@ export default function ContactSection( ) {
         </div>
 
         <div className="contact-layout">
-          {/* --- LADO ESQUERDO: MAPA --- */}
-          <div className="map-container">
-            <iframe
-              src={mapUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Endereço da Detalhes Uniformes"
-            ></iframe>
+          {/* --- LADO ESQUERDO: COBERTURA --- */}
+          <div className="coverage-container">
+            <div className="coverage-header">
+              <div className="coverage-icon-wrap">
+                <MapPin size={28} />
+              </div>
+              <div>
+                <h3>Atendemos toda São Paulo</h3>
+                <p>Entregamos em qualquer região da cidade e Grande SP</p>
+              </div>
+            </div>
+
+            <div className="zones-grid">
+              {zones.map((zone) => (
+                <div className="zone-badge" key={zone}>
+                  <span className="zone-dot" />
+                  {zone}
+                </div>
+              ))}
+            </div>
+
+            <div className="coverage-delivery">
+              <Truck size={20} />
+              <span>Entrega via transportadora para todo o estado de SP</span>
+            </div>
+
+            <div className="coverage-note">
+              Não encontrou sua região? Entre em contato — atendemos sob consulta para qualquer localidade.
+            </div>
           </div>
 
-          {/* --- LADO DIREITO: INFORMAÇÕES --- */}
+          {/* --- LADO DIREITO: CANAIS --- */}
           <div className="info-container">
             <a href={`https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`} target="_blank" rel="noopener noreferrer" className="contact-card">
               <div className="contact-icon-wrapper whatsapp">
@@ -72,7 +91,7 @@ export default function ContactSection( ) {
                 <p>{contactInfo.email}</p>
               </div>
             </a>
-            
+
             <a href={contactInfo.instagram} target="_blank" rel="noopener noreferrer" className="contact-card">
               <div className="contact-icon-wrapper instagram">
                 <Instagram size={24} />
@@ -86,5 +105,5 @@ export default function ContactSection( ) {
         </div>
       </div>
     </section>
-   );
+  );
 }

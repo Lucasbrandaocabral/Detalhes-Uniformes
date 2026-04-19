@@ -21,7 +21,7 @@ export default function WhyChoose() {
           <span className="why-choose-label">Nossos Diferenciais</span>
           <h2>Por que escolher a Detalhes Uniformes?</h2>
           <p>
-            Mais de 15 anos atendendo escolas da zona leste de São Paulo com
+            Mais de 15 anos atendendo escolas de toda São Paulo com
             qualidade, pontualidade e atendimento próximo. Cada detalhe é
             pensado para que sua instituição se destaque.
           </p>

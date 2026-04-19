@@ -2,7 +2,7 @@ import "./AboutSection.css";
 import { CheckCircle } from "lucide-react";
 
 const highlights = [
-  "Fundada há mais de 15 anos na zona leste de São Paulo",
+  "Fundada há mais de 15 anos em São Paulo",
   "Atendimento exclusivo para instituições de ensino",
   "Produção própria com controle total de qualidade",
   "Equipe especializada em moda e confecção escolar",
@@ -16,16 +16,11 @@ export default function AboutSection() {
           <span className="about-label">Quem Somos</span>
           <h2>Uma história construída com dedicação e qualidade</h2>
           <p>
-            A Detalhes Uniformes nasceu do sonho de oferecer uniformes escolares
-            que combinassem qualidade, conforto e identidade visual. Ao longo de
-            mais de 15 anos, nos tornamos referência na zona leste de São Paulo,
-            atendendo dezenas de instituições de ensino com compromisso e
-            excelência.
+            Há mais de 25 anos, cuidando de cada detalhe.
+            A Detalhes Uniformes é uma empresa com mais de duas décadas de experiência na confecção de uniformes, atuando com seriedade, qualidade e compromisso. Somos especializados em uniformes escolares, camisetas, blusões, calças, além de vestuário para eventos cristãos e turmas de terceirão.
           </p>
           <p>
-            Nossa missão é vestir cada aluno com orgulho, garantindo peças
-            duráveis, bem acabadas e que reflitam os valores de cada escola.
-            Cada detalhe importa — por isso levamos esse nome.
+            Nossa história é construída com atenção aos detalhes, excelência no acabamento e respeito às necessidades de cada cliente, oferecendo peças que unem conforto, durabilidade e padronização. Na Detalhes Uniformes, cada uniforme é produzido com responsabilidade, profissionalismo e dedicação.
           </p>
 
           <ul className="about-highlights">
@@ -49,7 +44,7 @@ export default function AboutSection() {
           </div>
           <div className="about-card-secondary bottom-left">
             <span className="about-card-number">100%</span>
-            <span className="about-card-desc">Feito na zona leste</span>
+            <span className="about-card-desc">Feito em São Paulo</span>
           </div>
         </div>
       </div>

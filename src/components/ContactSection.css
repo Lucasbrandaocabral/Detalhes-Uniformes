@@ -49,11 +49,92 @@
   border: 1px solid #e5e7eb;
 }
 
-/* --- Lado do Mapa --- */
-.map-container {
+/* --- Lado da Cobertura --- */
+.coverage-container {
+  background: linear-gradient(135deg, #3730a3 0%, #4f46e5 100%);
+  border-radius: 16px;
+  padding: 36px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  justify-content: center;
+}
+
+.coverage-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.coverage-icon-wrap {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 12px;
-  overflow: hidden;
-  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coverage-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #fff;
+}
+
+.coverage-header p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+.zones-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.zone-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.zone-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #a5f3fc;
+  flex-shrink: 0;
+}
+
+.coverage-delivery {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.coverage-note {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 20px;
+  line-height: 1.5;
 }
 
 /* --- Lado das Informações --- */
@@ -144,8 +225,8 @@
     font-size: 1rem;
   }
 
-  .map-container {
-    min-height: 260px;
+  .coverage-container {
+    padding: 24px;
   }
 }
 

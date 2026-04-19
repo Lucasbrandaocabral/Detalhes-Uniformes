@@ -51,7 +51,7 @@ export default function HeroSection() {
         </h1>
         <p className="hero-subtitle">
           Confeccionamos uniformes com excelência, atendendo instituições de
-          ensino em toda zona leste de São Paulo.
+          ensino em toda São Paulo.
         </p>
         <div className="hero-cta-container">
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hero-cta-primary">Solicitar Orçamento</a>
