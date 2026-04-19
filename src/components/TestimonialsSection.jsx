@@ -94,7 +94,7 @@ export default function TestimonialsSection() {
         </Swiper>
 
         <div className="logos-container">
-          <h3 className="logos-title">Escolas que confiam em nosso trabalho</h3>
+          <h3 className="logos-title">Algumas escolas que confiam em nosso trabalho</h3>
           <Swiper
             modules={[Autoplay]}
             spaceBetween={50}

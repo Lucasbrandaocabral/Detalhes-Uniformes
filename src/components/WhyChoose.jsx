@@ -5,7 +5,7 @@ const whatsappUrl = `https://wa.me/551120350589?text=${encodeURIComponent("Olá!
 
 const advantages = [
   { Icon: Shirt,    title: "Tecidos de Alta Qualidade",   description: "Materiais selecionados que garantem conforto e durabilidade." },
-  { Icon: Scissors, title: "Bordados Personalizados",      description: "Sua marca em destaque com bordados de alta precisão e acabamento." },
+  { Icon: Scissors, title: "Estampas Personalizados",      description: "Sua marca em destaque com bordados de alta precisão e acabamento." },
   { Icon: Palette,  title: "Cores Personalizadas",         description: "Vasta gama de cores para alinhar à identidade visual da instituição." },
   { Icon: Ruler,    title: "Modelagem Comprovada",         description: "Modelos testados para caimento perfeito e conforto no dia a dia." },
   { Icon: Users,    title: "Tamanhos Variados",            description: "Grade completa do infantil ao adulto, sem exceções." },
