@@ -113,12 +113,13 @@ export default function HeroSection() {
   const gy = useSpring(glowY, { stiffness: 140, damping: 22, mass: 0.4 });
 
   const onMouseMove = (e) => {
-    if (!sectionRef.current) return;
+    if (isTouch || !sectionRef.current) return;
     const rect = sectionRef.current.getBoundingClientRect();
     glowX.set(e.clientX - rect.left);
     glowY.set(e.clientY - rect.top);
   };
   const onMouseLeave = () => {
+    if (isTouch) return;
     glowX.set(-1000);
     glowY.set(-1000);
   };
@@ -212,13 +213,26 @@ export default function HeroSection() {
       return () => window.removeEventListener("resize", resize);
     }
 
-    const R = 300;
+    let t = 0;
     const frame = () => {
       ctx.clearRect(0, 0, W, H);
 
-      // Reveal: costura/peças iluminadas só no raio do cursor
-      const cx = gx.get();
-      const cy = gy.get();
+      // No celular (sem mouse), o ponto de luz passeia sozinho pelo hero
+      let cx;
+      let cy;
+      if (isTouch) {
+        t += 0.006;
+        cx = W * (0.5 + 0.3 * Math.sin(t) * Math.cos(t * 0.45));
+        cy = H * (0.42 + 0.26 * Math.sin(t * 0.85));
+        glowX.set(cx);
+        glowY.set(cy);
+      } else {
+        cx = gx.get();
+        cy = gy.get();
+      }
+
+      // Reveal: costura/peças iluminadas só no raio do ponto de luz
+      const R = W < 600 ? 210 : 300;
       if (cx > -400) {
         ctx.drawImage(art, 0, 0);
         ctx.globalCompositeOperation = "destination-in";
@@ -240,10 +254,10 @@ export default function HeroSection() {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
     };
-  }, [reduceMotion, gx, gy]);
+  }, [reduceMotion, isTouch, gx, gy, glowX, glowY]);
 
   const words = TITLE_STATIC.split(" ");
-  const showGlow = !reduceMotion && !isTouch;
+  const showGlow = !reduceMotion;
 
   return (
     <section

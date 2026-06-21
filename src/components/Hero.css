@@ -256,6 +256,15 @@
   .hero-stat strong { font-size: 1.6rem; }
 }
 
+@media (max-width: 600px) {
+  .hero-glow {
+    width: 460px;
+    height: 460px;
+    margin-left: -230px;
+    margin-top: -230px;
+  }
+}
+
 @media (max-width: 480px) {
   .hero-title { font-size: 1.8rem; }
   .hero-badge { font-size: 0.76rem; padding: 6px 14px; }
