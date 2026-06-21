@@ -226,7 +226,7 @@ export default function HeroSection() {
         const amp = 12 + (j % 3) * 5;
         const k = (Math.PI * 2) / (200 + (j % 4) * 60);
         const phase = j * 0.9;
-        const speed = 0.9 + (j % 2) * 0.4;
+        const speed = 0.13 + (j % 2) * 0.05;
         ctx.strokeStyle = `rgba(13, 37, 87, ${0.1 + (j % 3) * 0.02})`;
         ctx.beginPath();
         for (let x = -20; x <= W + 20; x += 10) {
