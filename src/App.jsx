@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import AboutSection from "./components/AboutSection";
+import MissionSection from "./components/MissionSection";
 import StatsSection from "./components/StatsSection";
 import Services from "./components/Services";
 import WhyChoose from "./components/WhyChoose";
@@ -19,6 +20,9 @@ function App() {
       </section>
       <section id="about-us">
         <AboutSection />
+      </section>
+      <section id="essencia">
+        <MissionSection />
       </section>
       <StatsSection />
       <section id="services">
