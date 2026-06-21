@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: var(--ff-body), "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 html, body {
@@ -88,18 +88,31 @@ html, body {
 }
 
 .navbar-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   text-decoration: none;
   opacity: 0;
   animation: fadeInItem 0.6s ease-out 0.5s forwards;
 }
 
-.navbar:not(.scrolled) .navbar-logo {
-  color: #ffffff;
+.navbar-logo .logo-symbol {
+  height: 42px;
+  width: auto;
+  display: block;
 }
-.navbar.scrolled .navbar-logo {
-  color: #1f2937;
+
+.navbar-logo .logo-wordmark {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+.navbar.scrolled .navbar-logo .logo-symbol {
+  height: 38px;
+}
+.navbar.scrolled .navbar-logo .logo-wordmark {
+  height: 24px;
 }
 
 .nav-menu {
@@ -125,18 +138,18 @@ html, body {
 .nav-link:nth-child(5) { animation-delay: 1.0s; }
 
 .navbar:not(.scrolled) .nav-link {
-  color: #ffffff;
+  color: var(--c-navy);
 }
 .navbar.scrolled .nav-link {
-  color: #4b5563;
+  color: var(--c-gray);
 }
 
 /* Efeito Hover */
 .navbar:not(.scrolled) .nav-link:hover {
-  color: #ffffff;
+  color: var(--c-accent-dark);
 }
 .navbar.scrolled .nav-link:hover {
-  color: #111827;
+  color: var(--c-navy);
 }
 
 /* Efeito da linha no hover */
@@ -153,11 +166,11 @@ html, body {
 }
 
 .navbar:not(.scrolled) .nav-link::after {
-  background-color: #ffffff;
+  background-color: var(--c-accent);
 }
 
 .navbar.scrolled .nav-link::after {
-  background-color: #3730a3;
+  background-color: var(--c-accent);
 }
 
 .nav-link:hover::after {
@@ -183,10 +196,10 @@ html, body {
 
 /* Cor do ícone dependendo do estado da navbar */
 .navbar:not(.scrolled) .menu-icon {
-  color: #ffffff;
+  color: var(--c-navy);
 }
 .navbar.scrolled .menu-icon {
-  color: #1f2937;
+  color: var(--c-navy);
 }
 
 .whatsapp-button {
@@ -234,7 +247,7 @@ html, body {
   }
 
   .nav-menu .nav-link {
-    color: #000000;
+    color: var(--c-navy);
     padding: 15px 10px;
     text-align: center;
     opacity: 1;
@@ -252,6 +265,6 @@ html, body {
     padding: 10px;
   }
   .navbar:not(.scrolled) .nav-link {
-  color: #000000;
+  color: var(--c-navy);
 }
 }

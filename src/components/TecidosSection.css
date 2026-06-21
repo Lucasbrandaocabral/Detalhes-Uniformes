@@ -1,6 +1,6 @@
 .tecidos-section {
   padding: 80px 20px;
-  background-color: #f8f9fa;
+  background-color: var(--c-paper);
   overflow: hidden;
 }
 
@@ -11,9 +11,10 @@
 
 .tecidos-label {
   display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #3730a3;
+  font-family: var(--ff-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--c-accent-dark);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 12px;
@@ -26,14 +27,14 @@
 
 .section-title {
   font-size: 2.5rem;
-  font-weight: 700;
-  color: #1f2937;
+  font-weight: 600;
+  color: var(--c-navy);
   margin-bottom: 16px;
 }
 
 .section-subtitle {
   font-size: 1.1rem;
-  color: #4b5563;
+  color: var(--c-gray);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -78,8 +79,10 @@
 .tecido-nome {
   font-size: 1.8rem;
   font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.06em;
   margin: 0 0 12px 0;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
 }
@@ -133,30 +136,36 @@
 
 .tecidos-swiper .swiper-button-next,
 .tecidos-swiper .swiper-button-prev {
-  width: 44px;
-  height: 44px;
-  background-color: #ffffff;
+  width: 52px;
+  height: 52px;
+  background-color: var(--c-navy);
   border-radius: 50%;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-  color: #3730a3;
-  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 12px 26px rgba(12, 37, 86, 0.28);
+  color: #ffffff;
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .tecidos-swiper .swiper-button-next:hover,
 .tecidos-swiper .swiper-button-prev:hover {
-  background-color: #3730a3;
-  color: #ffffff;
-  box-shadow: 0 4px 16px rgba(55, 48, 163, 0.3);
+  background-color: var(--c-accent);
+  color: var(--c-navy);
+  transform: scale(1.1);
+  box-shadow: 0 16px 32px rgba(194, 160, 99, 0.4);
+}
+
+.tecidos-swiper .swiper-button-next:active,
+.tecidos-swiper .swiper-button-prev:active {
+  transform: scale(0.96);
 }
 
 .tecidos-swiper .swiper-button-next::after,
 .tecidos-swiper .swiper-button-prev::after {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .swiper-pagination-bullet {
-  background: #d1d5db;
+  background: var(--c-light);
   width: 8px;
   height: 8px;
   opacity: 1;
@@ -164,7 +173,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background: #3730a3;
+  background: var(--c-navy);
   transform: scale(1.2);
 }
 

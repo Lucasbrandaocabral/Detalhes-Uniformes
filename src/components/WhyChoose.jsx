@@ -19,7 +19,7 @@ export default function WhyChoose() {
 
         <div className="why-choose-left">
           <span className="why-choose-label">Nossos Diferenciais</span>
-          <h2>Por que escolher a Detalhes Uniformes?</h2>
+          <h2>Por que escolher a MAIA Uniformes?</h2>
           <p>
             Mais de 15 anos atendendo escolas de toda São Paulo com
             qualidade, pontualidade e atendimento próximo. Cada detalhe é

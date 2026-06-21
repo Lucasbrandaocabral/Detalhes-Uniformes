@@ -1,6 +1,6 @@
 {
-  "homepage": "https://Lucasbrandaocabral.github.io/Detalhes-Uniformes",
-  "name": "uniform-pro",
+  "homepage": "https://maia-uniformes.vercel.app",
+  "name": "maia-uniformes",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,9 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -r https://github.com/Lucasbrandaocabral/Detalhes-Uniformes.git"
+    "preview": "vite preview"
   },
   "dependencies": {
     "lucide-react": "^0.552.0",

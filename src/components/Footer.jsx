@@ -1,6 +1,7 @@
 import './Footer.css';
 
 import { Instagram, PhoneCall, Send, MessageCircle } from 'lucide-react';
+import maiaFull from '../assets/brand/maia-full.png';
 
 const whatsappUrl = `https://wa.me/551120350589?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
 
@@ -12,7 +13,9 @@ export default function Footer() {
       <div className="footer-container">
 
         <div className="footer-column about">
-          <h3 className="footer-logo">Detalhes Uniformes</h3>
+          <div className="footer-logo">
+            <img src={maiaFull} alt="MAIA Uniformes" />
+          </div>
           <p>Qualidade e confiança em uniformes escolares há mais de 15 anos em toda São Paulo.</p>
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="footer-whatsapp">
             <MessageCircle size={16} />
@@ -58,7 +61,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {currentYear} Detalhes Uniformes. Todos os direitos reservados.</p>
+        <p>&copy; {currentYear} MAIA Uniformes. Todos os direitos reservados.</p>
       </div>
     </footer>
   );

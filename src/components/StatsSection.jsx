@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./StatsSection.css";
 
 const stats = [
-  { value: 15, suffix: "+", label: "Anos de Experiência" },
+  { value: 25, suffix: "+", label: "Anos de Experiência" },
   { value: 50, suffix: "+", label: "Escolas Atendidas" },
   { value: 10000, suffix: "+", label: "Peças Produzidas por Ano" },
   { value: 100, suffix: "%", label: "Satisfação Garantida" },

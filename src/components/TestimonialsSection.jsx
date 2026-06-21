@@ -13,40 +13,40 @@ const testimonialsData = [
   {
     name: "Maria Silva",
     title: "Diretora, Colégio Aprender Mais",
-    avatar: '/Detalhes-Uniformes/assets/avatars/maria-silva.jpg',
+    avatar: '/assets/avatars/maria-silva.jpg',
     text: "A parceria com a Detalhes Uniformes foi um divisor de águas. A qualidade do material é excepcional e a entrega programada nos deu uma tranquilidade que não tínhamos com outros fornecedores.",
     stars: 5,
   },
   {
     name: "João Pereira",
     title: "Coordenador, Escola Crescer",
-    avatar: '/Detalhes-Uniformes/assets/avatars/joao-pereira.jpg',
+    avatar: '/assets/avatars/joao-pereira.jpg',
     text: "O atendimento personalizado fez toda a diferença. Eles entenderam nossa necessidade e entregaram uniformes com um caimento perfeito e cores fiéis à nossa identidade visual. Recomendo!",
     stars: 5,
   },
   {
     name: "Ana Costa",
     title: "Gerente Adm., Instituto Educar",
-    avatar: '/Detalhes-Uniformes/assets/avatars/ana-costa.jpg',
+    avatar: '/assets/avatars/ana-costa.jpg',
     text: "Qualidade, pontualidade e um ótimo custo-benefício. Os pais dos alunos elogiaram muito o conforto e a durabilidade dos novos uniformes. Estamos muito satisfeitos.",
     stars: 5,
   },
 ];
 
 const logosData = [
-  { id: 1, src: '/Detalhes-Uniformes/assets/logos/colegio-da-comunidade.png', alt: "Colégio da Comunidade" },
-  { id: 2, src: '/Detalhes-Uniformes/assets/logos/colegio-alheambra-rodrigues.png', alt: "Colégio Alheambra Rodrigues" },
-  { id: 3, src: '/Detalhes-Uniformes/assets/logos/colegio-evangelico-de-itaquera.png', alt: "Colégio Evangelico de Itaquera" },
-  { id: 4, src: '/Detalhes-Uniformes/assets/logos/colegio-inovacao.png', alt: "Colégio Inovação" },
-  { id: 5, src: '/Detalhes-Uniformes/assets/logos/colegio-mania-de-aprender.png', alt: "Colégio Mania de Aprender" },
-  { id: 6, src: '/Detalhes-Uniformes/assets/logos/colegio-mega-visao.png', alt: "Colégio Mega Visão" },
+  { id: 1, src: '/assets/logos/colegio-da-comunidade.png', alt: "Colégio da Comunidade" },
+  { id: 2, src: '/assets/logos/colegio-alheambra-rodrigues.png', alt: "Colégio Alheambra Rodrigues" },
+  { id: 3, src: '/assets/logos/colegio-evangelico-de-itaquera.png', alt: "Colégio Evangelico de Itaquera" },
+  { id: 4, src: '/assets/logos/colegio-inovacao.png', alt: "Colégio Inovação" },
+  { id: 5, src: '/assets/logos/colegio-mania-de-aprender.png', alt: "Colégio Mania de Aprender" },
+  { id: 6, src: '/assets/logos/colegio-mega-visao.png', alt: "Colégio Mega Visão" },
 ];
 
 function StarRating({ count }) {
   return (
     <div className="star-rating">
       {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} size={18} fill="#f59e0b" color="#f59e0b" />
+        <Star key={i} size={18} fill="#C2A063" color="#C2A063" />
       ))}
     </div>
   );

@@ -1,6 +1,6 @@
 .services-section {
   padding: 80px 20px;
-  background-color: #f8f9fa; 
+  background-color: var(--c-paper);
 }
 
 .services-section .container {
@@ -16,9 +16,10 @@
 
 .services-label {
   display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #3730a3;
+  font-family: var(--ff-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--c-accent-dark);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 12px;
@@ -26,14 +27,14 @@
 
 .services-section .section-header h2 {
   font-size: 2.5rem;
-  font-weight: 700;
-  color: #1f2937;
+  font-weight: 600;
+  color: var(--c-navy);
   margin-bottom: 16px;
 }
 
 .services-section .section-header p {
   font-size: 1.1rem;
-  color: #4b5563; 
+  color: var(--c-gray);
   line-height: 1.6;
 }
 
@@ -47,7 +48,7 @@
   background-color: #ffffff;
   padding: 35px 30px;
   border-radius: 16px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--c-line);
   text-align: center;
   position: relative; 
   overflow: hidden;  
@@ -82,8 +83,8 @@
   height: 64px;
   margin: 0 auto 25px auto;
   border-radius: 50%;
-  background-color: #e0e7ff;
-  color: #3730a3;
+  background-color: rgba(194, 160, 99, 0.15);
+  color: var(--c-navy);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,13 +93,13 @@
 .service-card h3 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--c-navy);
   margin-bottom: 12px;
 }
 
 .service-card p {
   font-size: 1rem;
-  color: #4b5563;
+  color: var(--c-gray);
   line-height: 1.6;
 }
 
@@ -113,24 +114,24 @@
 
 .services-cta p {
   font-size: 1.1rem;
-  color: #4b5563;
+  color: var(--c-gray);
   font-weight: 500;
 }
 
 .services-cta-btn {
   display: inline-block;
-  background-color: #111827;
+  background-color: var(--c-navy);
   color: #ffffff;
   font-size: 1rem;
   font-weight: 600;
   padding: 14px 32px;
-  border-radius: 8px;
+  border-radius: var(--radius);
   text-decoration: none;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .services-cta-btn:hover {
-  background-color: #1f2937;
+  background-color: var(--c-royal);
   transform: scale(1.03);
 }
 

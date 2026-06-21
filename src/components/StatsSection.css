@@ -1,6 +1,6 @@
 .stats-section {
   padding: 90px 20px;
-  background-color: #111827;
+  background-color: var(--c-paper);
 }
 
 .stats-container {
@@ -15,9 +15,10 @@
 
 .stats-label {
   display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #818cf8;
+  font-family: var(--ff-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--c-accent-dark);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 14px;
@@ -25,45 +26,47 @@
 
 .stats-header h2 {
   font-size: 2.4rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-weight: 600;
+  color: var(--c-navy);
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
+  gap: 1px;
   border-radius: 16px;
   overflow: hidden;
+  border: 1px solid var(--c-line);
+  background-color: var(--c-line);
 }
 
 .stat-card {
-  background-color: #1f2937;
+  background-color: #ffffff;
   padding: 50px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
   text-align: center;
-  border: 1px solid #374151;
   transition: background-color 0.3s ease;
 }
 
 .stat-card:hover {
-  background-color: #263141;
+  background-color: var(--c-paper);
 }
 
 .stat-number {
+  font-family: var(--ff-title);
   font-size: 3.2rem;
-  font-weight: 800;
-  color: #818cf8;
+  font-weight: 700;
+  color: var(--c-navy);
   line-height: 1;
   font-variant-numeric: tabular-nums;
 }
 
 .stat-label {
   font-size: 1rem;
-  color: #9ca3af;
+  color: var(--c-gray);
   font-weight: 500;
   line-height: 1.4;
 }

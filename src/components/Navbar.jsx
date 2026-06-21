@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { MessageCircle, Menu, X } from 'lucide-react';
+import maiaSymbol from '../assets/brand/maia-symbol.png';
+import maiaWordmark from '../assets/brand/maia-wordmark.png';
 
 const whatsappInfo = {
   number: "+551120350589", 
@@ -44,16 +46,18 @@ export default function Navbar() {
   return (
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        <a 
+        <a
           href="#"
           className="navbar-logo"
+          aria-label="MAIA Uniformes"
           onClick={(e) => {
             e.preventDefault();             // impede o reload
-            window.scrollTo({ top: 0, behavior: "smooth" }); 
+            window.scrollTo({ top: 0, behavior: "smooth" });
             if (isMenuOpen) handleToggleMenu(); // fecha o menu mobile
           }}
         >
-          Detalhes Uniformes
+          <img src={maiaSymbol} alt="" className="logo-symbol" />
+          <img src={maiaWordmark} alt="MAIA Uniformes" className="logo-wordmark" />
         </a>
 
         <nav className={`nav-menu ${isMenuOpen ? 'active' : ''} ${isMenuClosing ? 'closing' : ''}`}>

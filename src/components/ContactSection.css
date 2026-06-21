@@ -1,6 +1,6 @@
 .contact-section {
   padding: 80px 20px;
-  background-color: #f8f9fa;
+  background-color: var(--c-paper);
 }
 
 .contact-section .container {
@@ -16,9 +16,10 @@
 
 .contact-label {
   display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #3730a3;
+  font-family: var(--ff-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--c-accent-dark);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 12px;
@@ -26,14 +27,14 @@
 
 .contact-section .section-header h2 {
   font-size: 2.5rem;
-  font-weight: 700;
-  color: #1f2937;
+  font-weight: 600;
+  color: var(--c-navy);
   margin-bottom: 16px;
 }
 
 .contact-section .section-header p {
   font-size: 1.1rem;
-  color: #4b5563;
+  color: var(--c-gray);
   line-height: 1.6;
 }
 
@@ -45,13 +46,13 @@
   background-color: #ffffff;
   padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e5e7eb;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--c-line);
 }
 
 /* --- Lado da Cobertura --- */
 .coverage-container {
-  background: linear-gradient(135deg, #3730a3 0%, #4f46e5 100%);
+  background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-royal) 100%);
   border-radius: 16px;
   padding: 36px;
   color: #fff;
@@ -114,7 +115,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #a5f3fc;
+  background-color: var(--c-accent);
   flex-shrink: 0;
 }
 
@@ -150,8 +151,8 @@
   gap: 20px;
   padding: 15px;
   border-radius: 12px;
-  background-color: #f8f9fa;
-  border: 1px solid #e5e7eb;
+  background-color: var(--c-paper);
+  border: 1px solid var(--c-line);
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -184,21 +185,21 @@
 
 /* Cores específicas para cada ícone */
 .contact-icon-wrapper.whatsapp { background-color: #25D366; }
-.contact-icon-wrapper.phone { background-color: #3730a3; }
-.contact-icon-wrapper.email { background-color: #6366f1; }
+.contact-icon-wrapper.phone { background-color: var(--c-navy); }
+.contact-icon-wrapper.email { background-color: var(--c-royal); }
 .contact-icon-wrapper.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-.contact-icon-wrapper.address { background-color: #ef4444; }
+.contact-icon-wrapper.address { background-color: var(--c-accent-dark); }
 
 .contact-details h4 {
   font-size: 1.1rem;
   font-weight: 600;
   margin: 0 0 4px 0;
-  color: #1f2937;
+  color: var(--c-navy);
 }
 
 .contact-details p {
   font-size: 1rem;
-  color: #4b5563;
+  color: var(--c-gray);
   margin: 0;
   word-break: break-word; /* Garante que emails/links longos quebrem a linha */
 }

@@ -1,12 +1,38 @@
-
+/* ============================================================
+   MAIA Uniformes — Base & Design Tokens
+   Paleta e tipografia do Manual de Identidade Visual
+   ============================================================ */
 
 :root {
-  line-height: 1.5;
-  font-weight: 400;
+  /* Cores institucionais */
+  --c-navy: #0C2556;        /* Azul Marinho · primária */
+  --c-navy-deep: #0A1B3D;   /* Marinho profundo (hover/escuro) */
+  --c-royal: #1B4079;       /* Azul Royal · links/hover */
+  --c-sky: #5B8BC4;         /* Azul Céu · destaques */
+  --c-accent: #C2A063;      /* Areia Premium · acento (dourado) */
+  --c-accent-dark: #B08F4E; /* Dourado escuro (hover/contraste) */
+  --c-success: #2E7D5B;     /* Verde Sucesso · status */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Neutros */
+  --c-paper: #F5F4F0;       /* Névoa · fundo alternado */
+  --c-line: #E5E2DA;        /* Linhas/bordas */
+  --c-light: #D9D9D9;       /* Cinza claro */
+  --c-gray: #707070;        /* Cinza escuro · texto */
+  --c-ink: #1f2937;         /* Texto forte (quase navy) */
+
+  /* Tipografia */
+  --ff-title: 'Cinzel', Georgia, serif;
+  --ff-body: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --ff-mono: 'Roboto Mono', ui-monospace, monospace;
+
+  /* Sistema */
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(12, 37, 86, 0.08);
+  --transition: 0.3s ease;
+
+  color-scheme: light;
+  color: var(--c-navy);
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,61 +40,41 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: var(--c-navy);
+  font-family: var(--ff-body);
+  line-height: 1.5;
+}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Títulos em Cinzel (seletores de elemento vencem o reset universal) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ff-title);
+  color: var(--c-navy);
+  letter-spacing: 0.01em;
+}
+
+/* Os títulos de seção e hero seguem o padrão do manual: caixa alta */
+h1, h2 {
+  text-transform: uppercase;
+}
+
+a {
+  color: var(--c-royal);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--c-navy);
+}
+
+::selection {
+  background: var(--c-navy);
+  color: #fff;
 }

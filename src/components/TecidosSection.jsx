@@ -28,7 +28,7 @@ const tecidosData = [
   {
     id: 1,
     nome: 'Algodão 100%',
-    imagem: '/Detalhes-Uniformes/assets/algodao.jpg',
+    imagem: '/assets/algodao.jpg',
     beneficios: [
       { Icone: Leaf, texto: 'Natural' },
       { Icone: Cloud, texto: 'Conforto' },
@@ -38,7 +38,7 @@ const tecidosData = [
   {
     id: 2,
     nome: 'Dry-Fit',
-    imagem: '/Detalhes-Uniformes/assets/dry-fit.jpg',
+    imagem: '/assets/dry-fit.jpg',
     beneficios: [
       { Icone: Wind, texto: 'Secagem Rápida' },
       { Icone: Feather, texto: 'Leveza' },
@@ -48,7 +48,7 @@ const tecidosData = [
   {
     id: 3,
     nome: 'Piquet',
-    imagem: '/Detalhes-Uniformes/assets/piquet.jpg',
+    imagem: '/assets/piquet.jpg',
     beneficios: [
       { Icone: StretchHorizontal, texto: 'Elasticidade' },
       { Icone: Waves, texto: 'Textura' },
@@ -58,7 +58,7 @@ const tecidosData = [
   {
     id: 4,
     nome: 'Gabardine',
-    imagem: '/Detalhes-Uniformes/assets/gabardine.jpg',
+    imagem: '/assets/gabardine.jpg',
     beneficios: [
       { Icone: ShieldCheck, texto: 'Durabilidade' },
       { Icone: Waves, texto: 'Caimento' },
@@ -68,7 +68,7 @@ const tecidosData = [
   {
     id: 5,
     nome: 'Oxford Light',
-    imagem: '/Detalhes-Uniformes/assets/oxford-light.jpg',
+    imagem: '/assets/oxford-light.jpg',
     beneficios: [
       { Icone: Wind, texto: 'Respirável' },
       { Icone: Settings, texto: 'Fácil de cuidar' },
