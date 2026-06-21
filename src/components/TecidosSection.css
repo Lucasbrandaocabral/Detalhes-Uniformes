@@ -134,34 +134,49 @@
   padding: 10px 56px 50px 56px;
 }
 
-.tecidos-swiper .swiper-button-next,
-.tecidos-swiper .swiper-button-prev {
-  width: 52px;
-  height: 52px;
-  background-color: var(--c-navy);
-  border-radius: 50%;
-  box-shadow: 0 12px 26px rgba(12, 37, 86, 0.28);
-  color: #ffffff;
-  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+/* Setas minimalistas e discretas — chevron fino, sem círculo */
+.tecidos-swiper .swiper-button-prev,
+.tecidos-swiper .swiper-button-next {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  box-shadow: none;
+  color: rgba(12, 37, 86, 0.4);
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.tecidos-swiper .swiper-button-next:hover,
-.tecidos-swiper .swiper-button-prev:hover {
-  background-color: var(--c-accent);
-  color: var(--c-navy);
-  transform: scale(1.1);
-  box-shadow: 0 16px 32px rgba(194, 160, 99, 0.4);
+.tecidos-swiper .swiper-button-prev::after,
+.tecidos-swiper .swiper-button-next::after {
+  content: "";
+  width: 13px;
+  height: 13px;
+  border: 0 solid currentColor;
+  border-radius: 1px;
 }
 
-.tecidos-swiper .swiper-button-next:active,
-.tecidos-swiper .swiper-button-prev:active {
-  transform: scale(0.96);
-}
-
-.tecidos-swiper .swiper-button-next::after,
 .tecidos-swiper .swiper-button-prev::after {
-  font-size: 18px;
-  font-weight: 700;
+  border-left-width: 1.5px;
+  border-bottom-width: 1.5px;
+  transform: translateX(2px) rotate(45deg);
+}
+
+.tecidos-swiper .swiper-button-next::after {
+  border-top-width: 1.5px;
+  border-right-width: 1.5px;
+  transform: translateX(-2px) rotate(45deg);
+}
+
+.tecidos-swiper .swiper-button-prev:hover,
+.tecidos-swiper .swiper-button-next:hover {
+  color: var(--c-navy);
+}
+
+.tecidos-swiper .swiper-button-prev:hover {
+  transform: translateX(-3px);
+}
+
+.tecidos-swiper .swiper-button-next:hover {
+  transform: translateX(3px);
 }
 
 .swiper-pagination-bullet {

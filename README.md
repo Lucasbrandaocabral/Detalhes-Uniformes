@@ -50,6 +50,7 @@ Fundo sempre claro, com navy e dourado como protagonistas, e a logo da camisa MA
 | ⚛️ | **React 19** | Interface e componentes |
 | ⚡ | **Vite 7** | Build e dev server |
 | 🎠 | **Swiper** | Carrosséis de tecidos e depoimentos |
+| 🎬 | **Framer Motion** | Animações do hero e micro-interações |
 | 🎨 | **Lucide React** | Ícones de linha fina |
 | ▲ | **Vercel** | Hospedagem e deploy contínuo |
 
