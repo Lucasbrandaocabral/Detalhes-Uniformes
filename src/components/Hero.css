@@ -263,6 +263,10 @@
     margin-left: -230px;
     margin-top: -230px;
   }
+  /* Mobile: ondas animadas viram a textura principal; arte estática fica bem fraca */
+  .hero-art {
+    opacity: 0.03;
+  }
 }
 
 @media (max-width: 480px) {

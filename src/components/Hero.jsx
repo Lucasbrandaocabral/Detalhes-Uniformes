@@ -214,35 +214,56 @@ export default function HeroSection() {
     }
 
     let t = 0;
+
+    // Linhas de costura ondulando como ondas (mobile)
+    const drawWaves = (time) => {
+      const M = Math.max(6, Math.min(9, Math.round(H / 110)));
+      ctx.lineCap = "round";
+      ctx.lineWidth = 1.4;
+      ctx.setLineDash([1.6, 10]);
+      for (let j = 0; j < M; j++) {
+        const baseY = (H * (j + 0.6)) / (M + 0.2);
+        const amp = 12 + (j % 3) * 5;
+        const k = (Math.PI * 2) / (200 + (j % 4) * 60);
+        const phase = j * 0.9;
+        const speed = 0.9 + (j % 2) * 0.4;
+        ctx.strokeStyle = `rgba(13, 37, 87, ${0.1 + (j % 3) * 0.02})`;
+        ctx.beginPath();
+        for (let x = -20; x <= W + 20; x += 10) {
+          const y = baseY + amp * Math.sin(x * k + phase + time * speed);
+          if (x === -20) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
+    };
+
     const frame = () => {
       ctx.clearRect(0, 0, W, H);
 
-      // No celular (sem mouse), o ponto de luz passeia sozinho pelo hero
-      let cx;
-      let cy;
       if (isTouch) {
-        t += 0.006;
-        cx = W * (0.5 + 0.3 * Math.sin(t) * Math.cos(t * 0.45));
-        cy = H * (0.42 + 0.26 * Math.sin(t * 0.85));
-        glowX.set(cx);
-        glowY.set(cy);
+        // No celular: as linhas ondulam sozinhas + brilho dourado vagueia por cima
+        t += 0.016;
+        glowX.set(W * (0.5 + 0.3 * Math.sin(t * 0.4) * Math.cos(t * 0.17)));
+        glowY.set(H * (0.42 + 0.26 * Math.sin(t * 0.33)));
+        drawWaves(t);
       } else {
-        cx = gx.get();
-        cy = gy.get();
-      }
-
-      // Reveal: costura/peças iluminadas só no raio do ponto de luz
-      const R = W < 600 ? 210 : 300;
-      if (cx > -400) {
-        ctx.drawImage(art, 0, 0);
-        ctx.globalCompositeOperation = "destination-in";
-        const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, R);
-        grd.addColorStop(0, "rgba(0,0,0,1)");
-        grd.addColorStop(0.55, "rgba(0,0,0,0.85)");
-        grd.addColorStop(1, "rgba(0,0,0,0)");
-        ctx.fillStyle = grd;
-        ctx.fillRect(cx - R, cy - R, R * 2, R * 2);
-        ctx.globalCompositeOperation = "source-over";
+        // No desktop: reveal seguindo o cursor
+        const cx = gx.get();
+        const cy = gy.get();
+        const R = 300;
+        if (cx > -400) {
+          ctx.drawImage(art, 0, 0);
+          ctx.globalCompositeOperation = "destination-in";
+          const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, R);
+          grd.addColorStop(0, "rgba(0,0,0,1)");
+          grd.addColorStop(0.55, "rgba(0,0,0,0.85)");
+          grd.addColorStop(1, "rgba(0,0,0,0)");
+          ctx.fillStyle = grd;
+          ctx.fillRect(cx - R, cy - R, R * 2, R * 2);
+          ctx.globalCompositeOperation = "source-over";
+        }
       }
 
       drawParticles(true);
