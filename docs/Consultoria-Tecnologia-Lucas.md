@@ -1,203 +1,110 @@
-# Consultoria de Tecnologia — Detalhes Uniformes
+# Consultoria de Tecnologia — Maia Uniformes
 
-**Responsável pela área de Tecnologia:** Lucas Brandão
-**Projeto Integrador — Senac (Assistente Administrativo)**
-**Empresa analisada:** Detalhes Uniformes (corte e costura de uniformes)
+Lucas Brandão — Projeto Integrador · Senac (Assistente Administrativo)
 
-> Este documento tem duas partes:
-> **Parte A —** revisão do material produzido pela equipe (Marketing, Atendimento, Estoque e o DDD).
-> **Parte B —** minha contribuição: o que a **Tecnologia** pode melhorar na empresa e, em específico, **o que mudar no site**, com priorização e ligação direta às aulas do curso.
+Fiquei responsável pela área de tecnologia da nossa consultoria para a Maia Uniformes. Depois de ler o que cada colega levantou e de montar o levantamento DDD da empresa, reuni neste documento três coisas: um comentário honesto sobre o material que a equipe produziu, a minha proposta de como a tecnologia pode ajudar a resolver os problemas da empresa e uma análise do site, que é onde dá para mostrar resultado mais rápido e mais barato.
 
----
+Tentei deixar tudo o mais prático possível, porque a Maia é uma empresa pequena. Não adianta sugerir sistema caro que ninguém vai conseguir manter no dia a dia. Quase tudo que proponho aqui usa ferramenta gratuita.
 
-## Parte A — Revisão do material da equipe
+## 1. Lendo o material da equipe
 
-A primeira coisa que salta aos olhos lendo os quatro materiais juntos é que **todos eles, no fundo, esbarram no mesmo gargalo: falta de estrutura digital e de registro de informação.** Marketing fala em "presença digital", Atendimento fala em "padronizar e registrar o cliente", Estoque fala em "usar um sistema", e o levantamento DDD mostra que "os orçamentos não são guardados" e "não há controle automatizado". Isso é ótimo para nós: significa que a **Tecnologia é o eixo que costura as três áreas** — não é mais um tema isolado, é a base que sustenta os outros.
+Quando coloquei os quatro materiais lado a lado, percebi que eles contam a mesma história por ângulos diferentes. O Marketing fala em falta de presença digital; o Atendimento fala em registrar melhor o cliente; o pessoal de Estoque fala em passar a usar um sistema; e o meu levantamento mostrou que os orçamentos não são guardados e que o controle de recebimento é todo manual. No fundo, o problema é um só: a empresa perde informação o tempo todo. É aí que a tecnologia entra — não como um assunto à parte, mas como a base que dá sustentação às outras três áreas.
 
-Abaixo, o que cada parte trouxe de forte e onde dá para reforçar.
+Sobre cada parte, rapidamente:
 
-### 1. Marketing
-**Pontos fortes:** o diagnóstico está certeiro — dependência de indicação, ausência de prospecção ativa e falta de presença digital. As propostas (site, catálogo, modelo de orçamento, programa de indicação, marketing digital) cobrem bem o funil.
+O **Marketing** acertou no diagnóstico, e as propostas (site, catálogo, modelo de orçamento, programa de indicação) cobrem bem o caminho do cliente. O que faltou amarrar foi o "depois": atrair gente para um WhatsApp que não registra nada não resolve a dependência de indicação. E anúncio segmentado só vale a pena se a empresa medir o retorno, senão é dinheiro gasto no escuro.
 
-**Onde reforçar:**
-- O catálogo digital é citado, mas precisa de um **dono e um formato** (onde fica? como atualiza? quem tira as fotos?). Hoje isso não existe no site.
-- "Anúncios segmentados" só funcionam se houver **medição** (pixel/analytics). Sem isso, não dá para saber se o anúncio deu retorno — vira gasto sem KPI.
-- Falta amarrar Marketing ao **registro do lead**: de nada adianta atrair se o contato se perde no WhatsApp.
+O **Atendimento** teve a melhor sacada, na minha opinião: transformar o atendimento numa conversa consultiva, entendendo a necessidade da escola antes de mostrar modelo e apresentando combinações prontas em vez de peça solta. É exatamente a lógica do CRM que vimos em aula. Só falta o roteiro de atendimento e o cadastro das escolas ganharem uma ferramenta para sair do papel, nem que seja uma planilha bem-feita.
 
-### 2. Atendimento ao Cliente
-**Pontos fortes:** a ideia de transformar o atendimento em **experiência consultiva** (entrevista de necessidade, mostrar combinações prontas em vez de peças soltas) é excelente e muito alinhada ao CRM que estudamos.
+O **Estoque** trouxe os conceitos certos da gestão de estoque — estoque mínimo, ponto de reposição, inventário, foco nos itens mais usados. E a parte de sustentabilidade (reaproveitar retalho, campanha de devolução de uniforme, reciclagem têxtil) é um diferencial de verdade. Para mim ela é boa demais para ficar só dentro da produção: bem divulgada, vira marca e vira conteúdo para as redes.
 
-**Onde reforçar:**
-- O "roteiro de atendimento" e o "cadastro atualizado das escolas" pedem uma **ferramenta** para existir de verdade — nem que seja uma planilha ou um formulário padronizado. Senão fica no papel.
-- O pós-venda proposto (acompanhamento, feedback, aviso de reposição) é a etapa de **acompanhamento pós-venda do CRM** — combina com o que registramos no DDD como ponto fraco ("não há processo formal de feedback").
+O **DDD** foi a parte que eu fiz, então vou ser breve: ele funciona como um mapa. Dividir a empresa em sete contextos, do comercial ao pós-venda, deixa claro onde cada problema mora — e, para mim, cada contexto desses é um ponto onde a tecnologia pode entrar. É esse mapa que uso na proposta a seguir.
 
-### 3. Compras / Estoque / Sustentabilidade
-**Pontos fortes:** trouxe conceitos certos do curso — estoque mínimo, ponto de reposição, registro de entrada/saída, inventário, curva ABC implícita ("tecidos mais utilizados"). A parte de **sustentabilidade** (reaproveitamento de retalhos, campanha de devolução, reciclagem têxtil, campanha do agasalho) é um diferencial e conversa direto com a aula de **ESG**.
+## 2. O que encontrei olhando o site
 
-**Onde reforçar:**
-- "Utilização de sistema" precisa virar algo concreto e barato (planilha bem feita já resolve no começo — não precisa de software caro).
-- A sustentabilidade é forte demais para ficar só interna: ela **vira marketing** se for divulgada no site (pilar Social e Ambiental do ESG = marca responsável vende mais).
+Antes de propor qualquer coisa nova, fui analisar o site que já está no ar. Ele é bem-feito: tem boa aparência, animações, um carrossel de tecidos e até um chatbot que responde as dúvidas mais comuns. O problema não está na aparência — é que ele funciona como um folder digital bonito, e não como uma ferramenta que capta e organiza cliente. Três pontos me chamaram atenção.
 
-### 4. Levantamento DDD (sua parte)
-O DDD é a **espinha dorsal do trabalho**: mapeou a empresa inteira em 7 contextos (Comercial, Atendimento/Orçamentos, Pedidos/Contratos, Suprimentos, Produção, Financeiro, Pós-venda). Isso dá à equipe uma visão de processo que os outros materiais, sozinhos, não teriam. Cada contexto do DDD é, na prática, **um lugar onde a tecnologia pode entrar** — e é exatamente isso que a Parte B explora.
+O primeiro é que o site só fala de uniforme escolar. Mas, pelo que levantei, a Maia produz bem mais do que isso: uniforme profissional, avental, linha esportiva, roupa de natação, kimono, dry-fit e roupa para equipe de limpeza. Ou seja, o site mostra uma fatia pequena do que a empresa sabe fazer e acaba deixando venda na mesa.
 
-### Observação importante de alinhamento (achado no próprio site)
-Ao analisar o código do site, encontrei dois pontos que a equipe precisa decidir **antes** de seguir:
+O segundo é que ele mostra os tecidos, mas não tem um catálogo de produtos organizado por categoria, com foto. Quem entra descobre de que material a roupa é feita, mas não consegue navegar pelos tipos de uniforme. E foi justamente esse catálogo digital que o Marketing pediu.
 
-1. **Inconsistência de marca:** o site foi construído com o nome **"MAIA Uniformes"** (título, README, logos), mas o chatbot e a página de contato usam **"Detalhes Uniformes"**. O cliente final vai estranhar. É preciso **escolher uma identidade só** e padronizar em todo lugar.
-2. **O site só fala de uniforme escolar**, mas o DDD mostra que a empresa produz muito mais: uniformes profissionais, aventais, linha esportiva, roupas de natação, kimonos, dry-fit, roupas de limpeza. **O site está vendendo menos do que a empresa sabe fazer.**
+O terceiro é o mais importante: o botão de "Solicitar Orçamento" só abre o WhatsApp com uma mensagem pronta. Não existe um formulário que pergunte o que a escola precisa, nem que registre o contato em algum lugar. Na prática, todo cliente que chega depende de alguém responder na hora, e nada fica guardado — o mesmo problema que aparece no DDD.
 
----
+Vale um ajuste a mais: como a marca agora é Maia Uniformes, é bom revisar os pontos que ainda carregam o nome antigo (o texto do chatbot, o e-mail de contato e o usuário do Instagram), para que todos os canais falem a mesma língua.
 
-## Parte B — Minha contribuição: Tecnologia
+## 3. Minha proposta para a tecnologia
 
-> **Premissa:** a Detalhes Uniformes é uma empresa pequena. Toda recomendação aqui prioriza ferramentas **gratuitas ou de baixo custo** e fáceis de operar, para que a dona consiga manter sozinha. Tecnologia boa aqui não é a mais cara — é a que a empresa **consegue usar todo dia**.
+A ideia central é simples: fazer a Maia parar de perder informação e passar a ser encontrada. Separei a proposta em frentes, da mais urgente para a menos.
 
-### Visão geral: a tecnologia conectando os contextos do DDD
+**Registrar quem pede orçamento.** É o passo mais importante. Hoje o contato chega e se perde. A solução não precisa ser cara: um formulário de orçamento no site, feito com o Google Forms, já resolve o começo. Nele a gente coloca as mesmas perguntas que o Atendimento faria numa conversa consultiva — tipo de instituição, faixa etária, quantidade de alunos, peças, tecido, personalização, prazo e uma ideia de orçamento. Cada resposta cai automaticamente numa planilha, e essa planilha já é o início de duas coisas que faltam hoje: o histórico de orçamentos e um CRM simples. Como o formulário coleta dado pessoal (nome, telefone, e-mail), ele precisa de um aviso de privacidade e de uma caixa de consentimento explicando para que aquilo será usado. Isso é exigência da LGPD e, ao mesmo tempo, é boa governança — o "G" do ESG.
 
-| Contexto (DDD) | Problema atual | Solução de tecnologia proposta | Aula do Senac que sustenta |
-|---|---|---|---|
-| Comercial / Captação | Só indicação, sem prospecção | Site + Google Meu Negócio + redes + anúncios medidos | Marketing 4 Ps (Promoção/Praça) |
-| Atendimento / Orçamentos | Manual, sem registro, sem padrão | Formulário de orçamento + roteiro + CRM (planilha) | CRM, Atendimento ao Cliente |
-| Pedidos / Contratos | Orçamentos não são guardados | Histórico de orçamentos/pedidos no CRM | CRM, Gestão de Documentos |
-| Suprimentos / Compras | Sem estoque, compra na hora | Planilha de estoque mínimo + ponto de pedido | Gestão de Estoque, Cadeia de Suprimentos |
-| Produção | Fluxo não documentado | Fluxograma do processo + checklist digital | Fluxograma, PDCA |
-| Financeiro | Recebimento manual | Planilha de fluxo de caixa + controle de recebíveis | Fluxo de Caixa, Excel Financeiro |
-| Pós-venda | Sem feedback formal | Formulário de satisfação + lembrete de reposição | CRM, KPI |
+**Montar um CRM, mesmo que seja em planilha.** Não precisa comprar sistema. Uma planilha bem organizada no Google Sheets já entrega o essencial do CRM que estudamos: o cadastro de cada escola, o histórico do que ela já comprou, o registro de cada orçamento, uma coluna de acompanhamento (próximo contato e status — em negociação, fechado ou perdido) e a marcação da época de reposição, para a empresa procurar o cliente antes de ele lembrar. Só isso já ataca de uma vez três pontos fracos do levantamento: o orçamento que não era guardado, o pós-venda informal e o recebimento sem controle.
 
-A seguir, cada frente em detalhe.
+**Padronizar o atendimento com as ferramentas certas.** O WhatsApp Business, que é gratuito, resolve boa parte do que o Atendimento pediu: respostas rápidas para as dúvidas mais comuns, mensagem de saudação automática, etiquetas para organizar as conversas e um catálogo embutido. O chatbot do site, que já existe, pode evoluir para terminar levando a pessoa ao formulário de orçamento, e não só ao WhatsApp — assim o contato fica registrado mesmo fora do horário comercial. Junto disso, vale criar um modelo padrão de orçamento com a identidade da Maia, para acabar com o "cada hora sai de um jeito".
 
-### B.1 — Presença digital de verdade (não só o site solto)
-Hoje existe um site, mas ele não é "encontrável". Prospecção passiva (o cliente te achar sozinho) depende de três coisas baratas:
-- **Google Meu Negócio (Perfil da Empresa):** gratuito. Coloca a Detalhes no Google Maps e na busca local ("uniforme escolar em [bairro]"). É o canal nº 1 de captação local e hoje está faltando.
-- **SEO básico no site:** título, descrição e palavras-chave certas ("uniforme escolar São Paulo", "uniforme profissional", "kimono", "avental"), para o Google entender o que a empresa vende.
-- **Redes sociais com link para o site** (Instagram já existe — `@detalhesuniformes`).
+**Fazer a empresa ser encontrada.** Prospecção não é só correr atrás do cliente; é também deixar que ele ache a empresa sozinho. Para isso, duas coisas baratas fazem muita diferença: cadastrar a Maia no Google Meu Negócio (gratuito, que coloca a empresa no Maps e na busca local do tipo "uniforme escolar perto de mim") e ajustar o site para o Google entender o que ela vende, usando os termos certos no título e na descrição das páginas. Somando a isso o Instagram, que já existe, com link para o site.
 
-> **Conexão Senac:** Marketing 4 Ps → "Praça" (onde o cliente te encontra) e "Promoção" (como ele fica sabendo).
+**Organizar o estoque sem complicar.** A empresa não trabalha com estoque fixo, e tudo bem — mas, nas épocas de pico, como o início do ano letivo, isso vira risco de prazo. Uma planilha de estoque mínimo dos tecidos e aviamentos mais usados, com um ponto de reposição (quando chega no mínimo, dispara a compra), já dá visibilidade. Dá para concentrar o controle nos poucos itens que mais pesam no custo, que é a ideia da curva ABC, e usar o histórico dos últimos meses para comprar antes da alta demanda.
 
-### B.2 — Catálogo digital estruturado
-Esse é o item mais pedido pelo Marketing e o que mais falta no site. O site mostra **tecidos**, mas não mostra **produtos por categoria**. Proposta:
-- Catálogo dividido nas categorias reais da empresa: **Escolar, Profissional, Esportiva, Natação, Kimonos, Aventais, Linha Limpeza, Personalizados.**
-- Cada item com **foto real, tecidos disponíveis, opções de personalização** (bordado/estampa) e tamanhos.
-- Pode começar simples: um catálogo em PDF para baixar **e** uma seção visual no site. O **Catálogo do WhatsApp Business** (gratuito) também serve como vitrine rápida.
+**Medir para poder melhorar.** Para sair do achismo, proponho acompanhar poucos indicadores numa aba da própria planilha: quantos orçamentos chegaram no mês, quantos viraram pedido (a taxa de conversão), quantos clientes novos entraram, o prazo médio de entrega e a satisfação no pós-venda. E transformar as metas vagas em metas SMART. Em vez de "vender mais", algo como "aumentar em 20% os orçamentos recebidos pelo site nos próximos seis meses" — específica, mensurável e com prazo.
 
-> **Conexão Senac:** Marketing 4 Ps → "Produto"; e Atendimento → mostrar "combinações completas em vez de peças soltas".
+**Usar a sustentabilidade também como marca.** A campanha de devolução de uniforme que a equipe propôs pode ganhar um espaço no site, explicando a reciclagem têxtil e o reaproveitamento, com um formulário simples de "quero devolver". Além de fazer bem, fortalece a imagem da empresa e ainda rende assunto para as redes sociais.
 
-### B.3 — Formulário de orçamento com captura de lead (com LGPD)
-Hoje o site só tem um botão que abre o WhatsApp. O problema: **o contato não fica registrado em lugar nenhum** — exatamente o que o DDD apontou ("os orçamentos não são guardados"). Proposta:
-- Um **formulário de orçamento estruturado** no site (Google Forms já resolve no início, gratuito), com os campos que o Atendimento precisa para a entrevista consultiva: tipo de instituição, faixa etária, quantidade de alunos, peças desejadas, tecido, personalização, prazo e orçamento estimado.
-- Cada envio **cai automaticamente numa planilha** = começo do CRM e do **histórico de orçamentos**.
-- **Importante (LGPD):** como o formulário coleta dados pessoais (nome, telefone, e-mail), o site precisa de um **aviso de privacidade** e de uma **caixa de consentimento** explicando a finalidade. Isso não é detalhe — é lei (Lei 13.709/2018) e também é boa governança (o "G" do ESG).
+## 4. O que mudar no site
 
-> **Conexão Senac:** CRM (registro de solicitações), LGPD (consentimento e finalidade), Atendimento (entrevista de necessidade padronizada).
+As mudanças do site, em ordem de prioridade. A lógica é a mesma: o site precisa deixar de ser um folder e virar uma ferramenta que mostra tudo, capta o cliente e permite medir.
 
-### B.4 — CRM simples (mesmo que seja em planilha)
-Não precisa comprar sistema. Uma planilha bem estruturada (Google Sheets) já entrega o essencial do CRM que estudamos:
-- Cadastro de cada escola/cliente (contato, histórico, o que já comprou).
-- Registro de cada orçamento e pedido (vira o histórico que hoje não existe).
-- Coluna de **follow-up**: data do próximo contato, status (em negociação, fechado, perdido).
-- Marcação de **época de reposição** para o pós-venda proativo.
+| # | Mudança | Por que | Esforço |
+|---|---------|---------|---------|
+| 1 | Catálogo por categoria com foto real (escolar, profissional, esportiva, natação, kimono, avental, limpeza) | Hoje só aparece a linha escolar; o site mostra menos do que a empresa faz | Médio |
+| 2 | Formulário de orçamento que cai numa planilha, no lugar de só abrir o WhatsApp | Capta e registra o lead; resolve o orçamento que se perde | Médio |
+| 3 | Aviso de privacidade e consentimento (LGPD) no formulário e no rodapé | Obrigação legal ao coletar dado pessoal | Baixo |
+| 4 | Alinhar a marca Maia em todos os pontos (chatbot, e-mail, Instagram) | Alguns canais ainda usam o nome antigo | Baixo |
+| 5 | Google Analytics e Pixel instalados | Permite medir resultado e anunciar com retorno | Baixo |
+| 6 | Google Meu Negócio e ajuste de SEO | Faz o cliente encontrar a empresa na busca | Médio |
+| 7 | Seção de Programa de Indicação | Atende à proposta de fidelização do Marketing | Baixo |
+| 8 | Seção de Sustentabilidade com formulário de devolução | Transforma a ação ambiental em marca | Baixo |
+| 9 | Otimizar as imagens para abrir rápido no celular | A maioria dos clientes acessa pelo telefone | Baixo |
+| 10 | Depoimentos e logos de escolas reais | Prova social verdadeira gera confiança | Baixo |
 
-Isso ataca de uma vez três pontos fracos do DDD: orçamentos não guardados, pós-venda informal e recebimento sem controle.
+## 5. Por onde começar
 
-> **Conexão Senac:** CRM (todos os pilares: perfil do cliente, registro de interações, acompanhamento pós-venda).
+Como é coisa demais para fazer de uma vez, usei a Matriz GUT — a mesma da aula — para decidir a ordem. Dei nota de 1 a 5 para a gravidade, a urgência e a tendência de piorar de cada ação, e multipliquei. O maior resultado é o que se resolve primeiro.
 
-### B.5 — Padronização do atendimento via tecnologia
-O Atendimento pediu um "roteiro" e "respostas rápidas". A tecnologia entrega isso:
-- **WhatsApp Business** (gratuito): respostas rápidas para dúvidas frequentes (prazo, tecido, mínimo), mensagem de saudação automática, etiquetas para organizar conversas (novo, orçamento enviado, fechado) e catálogo embutido.
-- O **chatbot do site já existe** e responde 26 tipos de dúvida — é um bom começo. Sugiro evoluí-lo para, ao final, **levar o cliente ao formulário de orçamento** (e não só ao WhatsApp), garantindo o registro do lead.
-- **Modelo padronizado de orçamento** (template no Google Docs/Canva com a identidade visual) — atende ao pedido do Marketing e padroniza o que hoje é feito "caso a caso".
+| Ação | G | U | T | Total | Ordem |
+|------|---|---|---|-------|-------|
+| Formulário de orçamento com planilha-CRM | 5 | 5 | 4 | 100 | 1º |
+| Catálogo digital por categoria | 4 | 4 | 4 | 64 | 2º |
+| Alinhar a marca Maia nos canais | 4 | 4 | 3 | 48 | 3º |
+| Google Meu Negócio e SEO | 4 | 3 | 4 | 48 | 3º |
+| LGPD no formulário | 4 | 4 | 2 | 32 | 5º |
+| Analytics e indicadores (KPIs) | 3 | 3 | 3 | 27 | 6º |
+| Controle de estoque em planilha | 3 | 3 | 3 | 27 | 6º |
+| Programa de indicação | 3 | 2 | 2 | 12 | 8º |
+| Seção de sustentabilidade | 2 | 2 | 2 | 8 | 9º |
 
-> **Conexão Senac:** Atendimento ao Cliente (padronização), CRM, Fluxograma (roteiro = processo desenhado).
+O resultado confirma o que já dava para sentir: o que mais dói e tende a piorar é a perda de cliente — o contato que chega e não fica registrado. Por isso o primeiro passo é o formulário de orçamento ligado à planilha-CRM. É barato, é rápido de montar e ataca o ponto que aparece em todos os materiais da equipe.
 
-### B.6 — Controle de estoque digital
-A empresa não tem estoque fixo, mas isso gera risco de prazo nas épocas de pico (início do ano letivo). Proposta de baixo custo:
-- Planilha de **estoque mínimo** dos tecidos e aviamentos mais usados, com **ponto de pedido** (quando chega no mínimo, dispara a compra).
-- Aplicar **Curva ABC**: focar o controle nos poucos itens que representam a maior parte do custo (tecidos base mais usados).
-- **Inventário** periódico (semanal/mensal) batendo o físico com a planilha.
-- Análise dos pedidos dos últimos meses para **antecipar compra** antes da alta demanda.
+Para colocar de pé sem susto, dá para usar o ciclo PDCA: começar pequeno (montar o formulário e a planilha e rodar por um mês), conferir o resultado (quantos contatos vieram e quantos fecharam) e então padronizar o que funcionou ou ajustar o que não deu certo. A cada volta, o processo fica um pouco melhor.
 
-> **Conexão Senac:** Gestão de Estoque (estoque mínimo, ponto de pedido, Curva ABC, PEPS), Cadeia de Suprimentos.
+## 6. Fechamento
 
-### B.7 — Indicadores (KPIs) e metas SMART
-"O que não se mede, não se melhora." Para sair do achismo, sugiro um **mini-painel** (uma aba na própria planilha) acompanhando poucos indicadores:
-- Nº de orçamentos recebidos / mês.
-- Taxa de conversão (orçamentos que viraram pedido).
-- Nº de novos clientes / mês.
-- Prazo médio de entrega.
-- Satisfação do cliente (do formulário de pós-venda).
+A maior parte dos problemas que a equipe levantou não se resolve com tecnologia cara, e sim com organização. Um site que mostra tudo o que a Maia faz, que registra quem pede orçamento e que ajuda a acompanhar o que está acontecendo já muda o jogo. Com ferramentas gratuitas — Google Forms, Sheets, WhatsApp Business e Google Meu Negócio — a empresa dá um salto grande e para de depender só de indicação.
 
-E transformar as metas vagas em **metas SMART**. Exemplo: em vez de "vender mais", → *"aumentar em 20% o número de orçamentos recebidos pelo site nos próximos 6 meses"*.
-
-> **Conexão Senac:** KPI (Indicadores de Desempenho), Metas SMART, PDCA (etapa Check).
-
-### B.8 — Sustentabilidade como tecnologia + marketing (ESG)
-A proposta da equipe sobre reaproveitamento e devolução de uniformes é ótima e pode ganhar uma camada digital:
-- Uma **seção "Sustentabilidade" no site** explicando a reciclagem têxtil, o reaproveitamento de retalhos e a campanha de devolução de uniformes.
-- Um **formulário simples de "Devolva seu uniforme"** (mesmo esquema do Google Forms).
-- Isso fortalece a marca: o pilar **Social e Ambiental do ESG** mostra que "marca responsável vende mais" — e ainda gera conteúdo para as redes.
-
-> **Conexão Senac:** ESG (os três pilares), Marketing 4 Ps (Promoção / marca responsável).
-
-### B.9 — Segurança, conformidade e governança de dados
-À medida que a empresa passa a guardar dados de clientes (CRM, formulários), entra a responsabilidade de cuidar deles:
-- **LGPD:** finalidade clara, coletar só o necessário, consentimento e possibilidade de exclusão.
-- **Backup:** usar Google Drive/Workspace garante que a planilha-CRM não se perca (nuvem + histórico de versões).
-- **Acesso controlado:** só quem precisa enxerga os dados.
-
-> **Conexão Senac:** LGPD, ESG (Governança), Gestão de Documentos e Arquivo.
+Resumindo os próximos passos: a equipe confirma a marca Maia em todos os canais; montamos o formulário de orçamento com a planilha-CRM; organizamos o catálogo por categoria com foto; ligamos o Google Meu Negócio e o Analytics; e rodamos o primeiro mês medindo os indicadores. É um caminho realista e que cabe no orçamento de uma empresa pequena.
 
 ---
 
-## Parte C — O que mudar no site (concreto)
+### Onde cada conteúdo do curso aparece nesta proposta
 
-O site atual é bonito e bem construído tecnicamente (React, animações, chatbot, carrossel de tecidos, integração com WhatsApp). O problema não é a aparência — é que **ele funciona como um folder digital, não como uma ferramenta de captação que registra e mede.** As mudanças abaixo estão priorizadas.
-
-| # | Mudança no site | Por que (problema que resolve) | Esforço |
-|---|---|---|---|
-| 1 | **Padronizar a marca** (decidir MAIA *ou* Detalhes e aplicar em todo o site) | Hoje o site mistura dois nomes — confunde o cliente | Baixo |
-| 2 | **Catálogo de produtos por categoria** com fotos reais (escolar, profissional, esportiva, natação, kimono, avental, limpeza) | O site só mostra escolar e só tecidos; subvende o portfólio | Médio |
-| 3 | **Formulário de orçamento estruturado** que cai numa planilha (não só botão de WhatsApp) | Captura e registra o lead — resolve "orçamentos não são guardados" | Médio |
-| 4 | **Aviso de privacidade + consentimento (LGPD)** no formulário e no rodapé | Obrigação legal ao coletar dados pessoais | Baixo |
-| 5 | **Google Analytics + Meta Pixel** instalados | Permite medir KPIs e rodar anúncios segmentados com retorno | Baixo |
-| 6 | **Seção "Programa de Indicação"** (benefício para quem indica) | Atende à proposta do Marketing de fidelização | Baixo |
-| 7 | **Seção "Sustentabilidade / ESG"** + formulário de devolução | Transforma a ação ambiental em marca e conteúdo | Baixo |
-| 8 | **SEO + Google Meu Negócio** (ser achado na busca local) | Prospecção passiva — cliente encontra a empresa sozinho | Médio |
-| 9 | **Otimizar imagens e desempenho** (carregamento rápido no celular) | A maioria dos clientes acessa pelo celular | Baixo |
-| 10 | **Chatbot leva ao formulário** (não só ao WhatsApp) | Garante o registro do lead mesmo fora do horário comercial | Baixo |
-| 11 | **Depoimentos e logos de escolas reais** (validar os atuais) | Prova social verdadeira aumenta confiança | Baixo |
-
----
-
-## Parte D — Priorização (usando a Matriz GUT do curso)
-
-Para decidir **por onde começar**, apliquei a Matriz GUT (Gravidade × Urgência × Tendência, nota 1–5) sobre as frentes de tecnologia:
-
-| Ação | G | U | T | **G×U×T** | Ordem |
-|---|---|---|---|---|---|
-| Formulário de orçamento + CRM (planilha) | 5 | 5 | 4 | **100** | 1º |
-| Catálogo digital por categoria | 4 | 4 | 4 | **64** | 2º |
-| Padronizar a marca no site | 4 | 4 | 3 | **48** | 3º |
-| Google Meu Negócio + SEO | 4 | 3 | 4 | **48** | 3º |
-| LGPD (aviso + consentimento) | 4 | 4 | 2 | **32** | 5º |
-| Analytics/Pixel + KPIs | 3 | 3 | 3 | **27** | 6º |
-| Controle de estoque (planilha) | 3 | 3 | 3 | **27** | 6º |
-| Programa de indicação | 3 | 2 | 2 | **12** | 8º |
-| Seção sustentabilidade/ESG | 2 | 2 | 2 | **8** | 9º |
-
-**Leitura:** o que mais dói e tende a piorar é a **perda de leads** (contato que chega e não é registrado). Por isso o **formulário + CRM** é o passo nº 1 — barato, rápido e ataca o coração do problema que aparece em todos os materiais da equipe.
-
-> **Como rodar isso na prática:** aplicar o ciclo **PDCA** — começar pequeno (Plan/Do: formulário + planilha por 1 mês), medir (Check: quantos leads e quantos viraram pedido) e padronizar ou ajustar (Act). A cada volta, o processo melhora.
-
----
-
-## Parte E — Resumo (a tecnologia em uma frase)
-
-> A Detalhes Uniformes não precisa de tecnologia cara — precisa **parar de perder informação**. Um site que **registra e mede** (formulário + CRM em planilha + indicadores), um **catálogo que mostra tudo o que a empresa faz** e uma **presença digital que faz o cliente encontrar a empresa sozinho** resolvem, com ferramentas gratuitas, a maior parte dos problemas levantados por Marketing, Atendimento e Estoque — e dão vida aos 7 contextos mapeados no DDD.
-
-### Próximos passos sugeridos
-1. A equipe decide a identidade única (MAIA ou Detalhes).
-2. Implementar o formulário de orçamento + planilha-CRM (passo nº 1 da GUT).
-3. Montar o catálogo por categorias com fotos reais.
-4. Ligar Google Meu Negócio e instalar Analytics.
-5. Rodar o PDCA por 1 mês e medir os primeiros KPIs.
+| Conteúdo do Senac | Onde apliquei |
+|-------------------|---------------|
+| CRM | Formulário e planilha de clientes, histórico e pós-venda |
+| Gestão de Estoque | Estoque mínimo, ponto de reposição e curva ABC |
+| KPI e Metas SMART | Indicadores na planilha e metas com prazo |
+| Matriz GUT | Priorização das ações (seção 5) |
+| PDCA | Implantação e melhoria do formulário e do CRM |
+| Fluxograma | Desenho do roteiro de atendimento e do processo de produção |
+| LGPD | Consentimento e finalidade no formulário |
+| ESG | Sustentabilidade e governança dos dados |
+| Marketing (4 Ps) | Catálogo (Produto) e site/Google (Praça e Promoção) |
