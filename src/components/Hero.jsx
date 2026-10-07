@@ -2,6 +2,7 @@ import { useRef, useState, useEffect, Fragment } from "react";
 import { motion, useReducedMotion, useMotionValue, useSpring } from "framer-motion";
 import "./Hero.css";
 import { ArrowDown } from "lucide-react";
+import HeroShowcase from "./HeroShowcase";
 
 const dynamicWords = ["Identidade", "Tradição", "Propósito"];
 const whatsappUrl = `https://wa.me/551120350589?text=${encodeURIComponent(
@@ -302,65 +303,71 @@ export default function HeroSection() {
 
       <canvas className="hero-fx" ref={fxRef} aria-hidden="true" />
 
-      <motion.div className="hero-content" variants={stagger} initial="hidden" animate="show">
-        <motion.div className="hero-badge" variants={fadeUp}>
-          <span className="hero-badge-dot" />
-          Parceiro de +50 instituições de ensino em SP
+      <div className="hero-inner">
+        <motion.div className="hero-content" variants={stagger} initial="hidden" animate="show">
+          <motion.div className="hero-badge" variants={fadeUp}>
+            <span className="hero-badge-dot" />
+            Parceiro de +50 instituições de ensino em SP
+          </motion.div>
+
+          <motion.h1 className="hero-title" variants={letterStagger}>
+            {words.map((word, wi) => (
+              <Fragment key={wi}>
+                <span className="hero-word">
+                  {word.split("").map((ch, ci) => (
+                    <motion.span className="hero-letter" variants={letterReveal} key={ci}>
+                      {ch}
+                    </motion.span>
+                  ))}
+                </span>
+                {wi < words.length - 1 ? " " : null}
+              </Fragment>
+            ))}{" "}
+            <span className="dynamic-word">{displayedWord}</span>
+            <span className="cursor">|</span>
+          </motion.h1>
+
+          <motion.div className="hero-cta-container" variants={fadeUp}>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-cta-primary"
+            >
+              Solicitar Orçamento
+            </a>
+            <a href="#services" className="hero-cta-secondary">
+              Conhecer Serviços <ArrowDown size={16} />
+            </a>
+          </motion.div>
+
+          <motion.div className="hero-stats-strip" variants={fadeUp}>
+            <div className="hero-stat">
+              <strong>25+</strong>
+              <span>Anos no Mercado</span>
+            </div>
+            <div className="hero-stat-divider" />
+            <div className="hero-stat">
+              <strong>50+</strong>
+              <span>Escolas Atendidas</span>
+            </div>
+            <div className="hero-stat-divider" />
+            <div className="hero-stat">
+              <strong>100%</strong>
+              <span>Personalizado</span>
+            </div>
+          </motion.div>
         </motion.div>
 
-        <motion.h1 className="hero-title" variants={letterStagger}>
-          {words.map((word, wi) => (
-            <Fragment key={wi}>
-              <span className="hero-word">
-                {word.split("").map((ch, ci) => (
-                  <motion.span className="hero-letter" variants={letterReveal} key={ci}>
-                    {ch}
-                  </motion.span>
-                ))}
-              </span>
-              {wi < words.length - 1 ? " " : null}
-            </Fragment>
-          ))}{" "}
-          <span className="dynamic-word">{displayedWord}</span>
-          <span className="cursor">|</span>
-        </motion.h1>
-
-        <motion.p className="hero-subtitle" variants={fadeUp}>
-          Há 25 anos vestindo escolas de São Paulo com qualidade, precisão e
-          atenção a cada detalhe — do design à entrega.
-        </motion.p>
-
-        <motion.div className="hero-cta-container" variants={fadeUp}>
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hero-cta-primary"
-          >
-            Solicitar Orçamento
-          </a>
-          <a href="#services" className="hero-cta-secondary">
-            Conhecer Serviços <ArrowDown size={16} />
-          </a>
+        <motion.div
+          className="hero-visual"
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
+        >
+          <HeroShowcase />
         </motion.div>
-
-        <motion.div className="hero-stats-strip" variants={fadeUp}>
-          <div className="hero-stat">
-            <strong>25+</strong>
-            <span>Anos no Mercado</span>
-          </div>
-          <div className="hero-stat-divider" />
-          <div className="hero-stat">
-            <strong>50+</strong>
-            <span>Escolas Atendidas</span>
-          </div>
-          <div className="hero-stat-divider" />
-          <div className="hero-stat">
-            <strong>100%</strong>
-            <span>Personalizado</span>
-          </div>
-        </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }
