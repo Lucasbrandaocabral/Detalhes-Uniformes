@@ -10,6 +10,18 @@ const whatsappUrl = `https://wa.me/551120350589?text=${encodeURIComponent(
 )}`;
 
 const TITLE_STATIC = "Uniformes Escolares com";
+
+const MARQUEE_ITEMS = [
+  "Uniformes escolares",
+  "Bordados personalizados",
+  "Moletom",
+  "Dry-fit",
+  "Piquet",
+  "Gabardine",
+  "Oxford",
+  "Pedidos sob encomenda",
+  "Controle de qualidade",
+];
 const NAVY = "#0D2557";
 
 // Costura curva pontilhada, atravessando o layout (mesa de modelagem)
@@ -301,6 +313,13 @@ export default function HeroSection() {
         <motion.div className="hero-glow" aria-hidden="true" style={{ x: gx, y: gy }} />
       )}
 
+      {/* Painel marinho atrás da vitrine, com manchas de luz em movimento */}
+      <div className="hero-panel" aria-hidden="true">
+        <span className="hero-blob hero-blob--gold" />
+        <span className="hero-blob hero-blob--sky" />
+        <span className="hero-blob hero-blob--royal" />
+      </div>
+
       <canvas className="hero-fx" ref={fxRef} aria-hidden="true" />
 
       <div className="hero-inner">
@@ -367,6 +386,20 @@ export default function HeroSection() {
         >
           <HeroShowcase />
         </motion.div>
+      </div>
+
+      <div className="hero-marquee" aria-hidden="true">
+        <div className="hero-marquee-track">
+          {[0, 1].map((copy) => (
+            <div className="hero-marquee-group" key={copy}>
+              {MARQUEE_ITEMS.map((item) => (
+                <span className="hero-marquee-item" key={item}>
+                  {item}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
