@@ -1,0 +1,194 @@
+/* ============================================================
+   Hero · Vitrine de produtos (carrossel em cartas)
+   ============================================================ */
+
+.showcase {
+  --card-w: clamp(260px, 27vw, 380px);
+  position: relative;
+  width: var(--card-w);
+  margin: 0 auto;
+}
+
+/* Moldura dourada deslocada atrás da pilha */
+.showcase-frame {
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  width: var(--card-w);
+  aspect-ratio: 4 / 5;
+  border: 1px solid rgba(194, 160, 99, 0.55);
+  border-radius: 20px;
+  pointer-events: none;
+}
+.showcase-frame::before,
+.showcase-frame::after {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-color: var(--c-accent);
+  border-style: solid;
+}
+.showcase-frame::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+  border-top-left-radius: 20px;
+}
+.showcase-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0;
+  border-bottom-right-radius: 20px;
+}
+
+.showcase-swiper {
+  width: var(--card-w);
+  aspect-ratio: 4 / 5;
+  overflow: visible;
+}
+
+.showcase-slide {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--c-paper);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 24px 50px -18px rgba(12, 37, 86, 0.35),
+    0 8px 18px -10px rgba(12, 37, 86, 0.2);
+  outline: 6px solid #ffffff;
+  outline-offset: -6px;
+}
+
+.showcase-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Véu marinho sutil para unificar as fotos com a paleta do site */
+.showcase-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(12, 37, 86, 0) 55%, rgba(10, 27, 61, 0.78) 100%),
+    linear-gradient(135deg, rgba(194, 160, 99, 0.08), rgba(12, 37, 86, 0.06));
+  pointer-events: none;
+}
+
+.showcase-caption {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.showcase-kind {
+  font-family: var(--ff-title);
+  font-size: 1.12rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.showcase-detail {
+  font-family: var(--ff-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #E9D7B0;
+}
+
+/* Inativas: um pouco mais escuras para dar profundidade à pilha */
+.showcase-swiper .swiper-slide:not(.swiper-slide-active) img {
+  filter: saturate(0.85) brightness(0.92);
+}
+
+/* ───────────── Controles ───────────── */
+.showcase-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+  width: var(--card-w);
+}
+
+.showcase-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(12, 37, 86, 0.3);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--c-navy);
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.showcase-btn:hover {
+  background: var(--c-navy);
+  border-color: var(--c-navy);
+  color: #ffffff;
+}
+.showcase-btn:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+}
+
+.showcase-progress {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.showcase-count {
+  font-family: var(--ff-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--c-navy);
+}
+.showcase-count em {
+  font-style: normal;
+  color: var(--c-gray);
+}
+
+.showcase-bar {
+  height: 2px;
+  background: var(--c-line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.showcase-bar span {
+  display: block;
+  height: 100%;
+  background: var(--c-accent);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+@media (max-width: 1023px) {
+  .showcase {
+    --card-w: min(300px, 68vw);
+  }
+}
+
+@media (max-width: 480px) {
+  .showcase-frame { top: -12px; left: -12px; }
+  .showcase-kind { font-size: 0.98rem; }
+  .showcase-caption { left: 16px; right: 16px; bottom: 14px; }
+}
