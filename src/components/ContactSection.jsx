@@ -1,6 +1,7 @@
 import './ContactSection.css';
 
-import { Phone, Mail, Instagram, MessageCircle, MapPin, Truck } from 'lucide-react';
+import { Phone, Mail, Instagram, MapPin, Truck } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const contactInfo = {
   phone: "+55 11 2035-0589",
@@ -64,7 +65,7 @@ export default function ContactSection() {
           <div className="info-container">
             <a href={`https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`} target="_blank" rel="noopener noreferrer" className="contact-card">
               <div className="contact-icon-wrapper whatsapp">
-                <MessageCircle size={24} />
+                <FaWhatsapp size={26} />
               </div>
               <div className="contact-details">
                 <h4>WhatsApp</h4>

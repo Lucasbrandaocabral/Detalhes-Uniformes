@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Chatbot.css';
 import { BotMessageSquare, X, Send } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { getBotResponse, getWelcomeMessage } from '../logic/chatbotLogic';
 
 function TypingIndicator() {
@@ -18,6 +19,7 @@ function MessageText({ text }) {
         <React.Fragment key={i}>
           {line.includes('wa.me') ? (
             <a href={line.match(/https?:\/\/\S+/)?.[0]} target="_blank" rel="noopener noreferrer" className="chat-link">
+              <FaWhatsapp size={16} />
               Clique aqui para abrir o WhatsApp
             </a>
           ) : line}

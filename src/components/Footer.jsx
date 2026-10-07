@@ -1,6 +1,7 @@
 import './Footer.css';
 
-import { Instagram, PhoneCall, Send, MessageCircle } from 'lucide-react';
+import { Instagram, PhoneCall, Send } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import maiaFull from '../assets/brand/maia-full.png';
 
 const whatsappUrl = `https://wa.me/551120350589?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
@@ -18,7 +19,7 @@ export default function Footer() {
           </div>
           <p>Qualidade e confiança em uniformes escolares há mais de 15 anos em toda São Paulo.</p>
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="footer-whatsapp">
-            <MessageCircle size={16} />
+            <FaWhatsapp size={17} />
             Fale no WhatsApp
           </a>
         </div>

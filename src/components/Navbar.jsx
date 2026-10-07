@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
-import { MessageCircle, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import maiaSymbol from '../assets/brand/maia-symbol.png';
 import maiaWordmark from '../assets/brand/maia-wordmark.png';
 
@@ -75,7 +76,7 @@ export default function Navbar() {
             rel="noopener noreferrer" 
             className="chat-button whatsapp-button"
           >
-            <MessageCircle size={20} />
+            <FaWhatsapp size={21} />
             <span>Fale no WhatsApp</span>
           </a>
           
