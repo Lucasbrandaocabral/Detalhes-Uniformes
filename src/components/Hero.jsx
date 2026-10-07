@@ -45,6 +45,62 @@ const GARMENTS = [
   { d: "M24,32 Q24,18 38,16 L62,16 Q76,18 76,32 L72,84 Q72,92 62,92 L38,92 Q28,92 28,84 Z M40,16 Q40,6 50,6 Q60,6 60,16 M34,56 L66,56 L62,82 L38,82 Z", x: 1175, y: 640, s: 1.8 },
 ];
 
+// Peças extras que só aparecem no reveal do cursor
+const circle = (cx, cy, r) =>
+  `M${cx - r},${cy} a${r},${r} 0 1,0 ${r * 2},0 a${r},${r} 0 1,0 ${-r * 2},0`;
+const TAPE =
+  "M0,0 L240,0 L240,20 L0,20 Z " +
+  Array.from({ length: 23 }, (_, i) => `M${10 + i * 10},0 L${10 + i * 10},${i % 5 === 4 ? 10 : 5}`).join(" ");
+
+const EXTRAS = [
+  // camisa polo
+  { d: "M22,30 L6,40 L16,58 L26,50 L26,94 L74,94 L74,50 L84,58 L94,40 L78,30 L62,22 L50,34 L38,22 Z M50,34 L50,54 M38,22 L44,36 L50,34 L56,36 L62,22", x: 560, y: 105, s: 1.3 },
+  // saia pregueada
+  { d: "M30,14 L70,14 L70,22 L86,86 L14,86 L30,22 Z M30,22 L70,22 M40,22 L34,86 M50,22 L50,86 M60,22 L66,86", x: 40, y: 400, s: 1.4 },
+  // boné
+  { d: "M18,62 Q18,24 52,24 Q86,24 86,62 Z M86,62 L104,66 Q108,72 98,72 L60,72 L60,62 M52,24 L52,18 M36,30 Q44,46 44,62 M68,30 Q60,46 60,62", x: 610, y: 735, s: 1.3 },
+  // tesoura
+  { d: `${circle(30, 74, 11)} ${circle(62, 74, 11)} M36,64 L76,8 M56,64 L16,8`, x: 420, y: 570, s: 1.2 },
+  // carretel de linha
+  { d: "M30,14 L70,14 L70,22 L30,22 Z M30,78 L70,78 L70,86 L30,86 Z M36,22 L36,78 M64,22 L64,78 M36,32 L64,40 M36,42 L64,50 M36,52 L64,60 M36,62 L64,70 M64,70 Q92,76 86,98", x: 330, y: 745, s: 1.2 },
+  // botão
+  { d: `${circle(50, 50, 30)} ${circle(50, 50, 22)} ${circle(42, 42, 3)} ${circle(58, 42, 3)} ${circle(42, 58, 3)} ${circle(58, 58, 3)}`, x: 700, y: 420, s: 0.9 },
+  // agulha com linha
+  { d: "M10,90 L84,16 M78,16 Q86,8 90,14 Q92,20 84,22 M86,18 C60,40 74,70 40,82 S14,70 6,60", x: 50, y: 215, s: 1.2 },
+  // fita métrica
+  { d: TAPE, x: 860, y: 815, s: 1 },
+  // lado do painel (aparecem em dourado)
+  { d: `${circle(30, 74, 11)} ${circle(62, 74, 11)} M36,64 L76,8 M56,64 L16,8`, x: 1300, y: 150, s: 1.1 },
+  { d: `${circle(50, 50, 30)} ${circle(50, 50, 22)} ${circle(42, 42, 3)} ${circle(58, 42, 3)} ${circle(42, 58, 3)} ${circle(58, 58, 3)}`, x: 1330, y: 430, s: 0.8 },
+  { d: "M30,14 L70,14 L70,22 L30,22 Z M30,78 L70,78 L70,86 L30,86 Z M36,22 L36,78 M64,22 L64,78 M36,32 L64,40 M36,42 L64,50 M36,52 L64,60 M36,62 L64,70 M64,70 Q92,76 86,98", x: 1300, y: 690, s: 1.1 },
+];
+
+// Mesmo recorte do .hero-panel (Hero.css), em pixels do canvas.
+// Abaixo de 1024px o painel vira a .hero-band, que fica por cima do canvas.
+function panelPath(W, H) {
+  const p = new Path2D();
+  if (W < 1024) return p;
+  const x0 = W * 0.54;
+  p.moveTo(x0 + W * 0.46 * 0.3, 84);
+  p.lineTo(W, 84);
+  p.lineTo(W, H);
+  p.lineTo(x0, H);
+  p.closePath();
+  return p;
+}
+
+const TRAIL_MS = 900;
+
+function PanelLights() {
+  return (
+    <>
+      <span className="hero-blob hero-blob--gold" />
+      <span className="hero-blob hero-blob--sky" />
+      <span className="hero-blob hero-blob--royal" />
+    </>
+  );
+}
+
 function HeroArt() {
   return (
     <>
@@ -125,11 +181,19 @@ export default function HeroSection() {
   const gx = useSpring(glowX, { stiffness: 140, damping: 22, mass: 0.4 });
   const gy = useSpring(glowY, { stiffness: 140, damping: 22, mass: 0.4 });
 
+  // Rastro de costura dourada atrás do cursor
+  const trailRef = useRef([]);
+
   const onMouseMove = (e) => {
     if (isTouch || !sectionRef.current) return;
     const rect = sectionRef.current.getBoundingClientRect();
-    glowX.set(e.clientX - rect.left);
-    glowY.set(e.clientY - rect.top);
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    glowX.set(x);
+    glowY.set(y);
+    const trail = trailRef.current;
+    trail.push({ x, y, t: performance.now() });
+    if (trail.length > 80) trail.shift();
   };
   const onMouseLeave = () => {
     if (isTouch) return;
@@ -150,7 +214,29 @@ export default function HeroSection() {
     const art = document.createElement("canvas");
     const actx = art.getContext("2d");
     const stitchP = STITCHES.map((d) => new Path2D(d));
-    const garmentP = GARMENTS.map((g) => new Path2D(g.d));
+    const shapes = [...GARMENTS, ...EXTRAS].map((g) => ({ ...g, p: new Path2D(g.d) }));
+
+    // Desenha costuras + peças; marinho no fundo claro, dourado sobre o painel
+    const paintArt = (s, ox, oy, stitchColor, garmentColor) => {
+      actx.translate(ox, oy);
+      actx.scale(s, s);
+      actx.lineCap = "round";
+      actx.lineJoin = "round";
+      actx.strokeStyle = stitchColor;
+      actx.lineWidth = 1.6;
+      actx.setLineDash([1.6, 10]);
+      stitchP.forEach((p) => actx.stroke(p));
+      actx.setLineDash([]);
+      actx.strokeStyle = garmentColor;
+      actx.lineWidth = 1.4;
+      shapes.forEach((g) => {
+        actx.save();
+        actx.translate(g.x, g.y);
+        actx.scale(g.s, g.s);
+        actx.stroke(g.p);
+        actx.restore();
+      });
+    };
 
     const renderArt = () => {
       art.width = W;
@@ -158,26 +244,49 @@ export default function HeroSection() {
       const s = Math.max(W / 1440, H / 900);
       const ox = (W - 1440 * s) / 2;
       const oy = (H - 900 * s) / 2;
+      const panel = panelPath(W, H);
+      const outside = new Path2D();
+      outside.rect(0, 0, W, H);
+      outside.addPath(panel);
+
       actx.setTransform(1, 0, 0, 1, 0, 0);
       actx.clearRect(0, 0, W, H);
-      actx.translate(ox, oy);
-      actx.scale(s, s);
-      actx.lineCap = "round";
-      actx.lineJoin = "round";
-      actx.strokeStyle = "rgba(13, 37, 87, 0.55)";
-      actx.lineWidth = 1.6;
-      actx.setLineDash([1.6, 10]);
-      stitchP.forEach((p) => actx.stroke(p));
-      actx.setLineDash([]);
-      actx.strokeStyle = "rgba(13, 37, 87, 0.42)";
-      actx.lineWidth = 1.4;
-      GARMENTS.forEach((g, i) => {
-        actx.save();
-        actx.translate(g.x, g.y);
-        actx.scale(g.s, g.s);
-        actx.stroke(garmentP[i]);
-        actx.restore();
-      });
+
+      actx.save();
+      actx.clip(outside, "evenodd");
+      paintArt(s, ox, oy, "rgba(13, 37, 87, 0.55)", "rgba(13, 37, 87, 0.42)");
+      actx.restore();
+
+      actx.save();
+      actx.clip(panel);
+      paintArt(s, ox, oy, "rgba(233, 215, 176, 0.5)", "rgba(194, 160, 99, 0.8)");
+      actx.restore();
+    };
+
+    // Linha de costura que segue o cursor e some aos poucos
+    const drawTrail = () => {
+      const now = performance.now();
+      const trail = trailRef.current;
+      while (trail.length && now - trail[0].t > TRAIL_MS) trail.shift();
+      if (trail.length < 2) return;
+      ctx.lineCap = "round";
+      ctx.lineWidth = 2.6;
+      ctx.setLineDash([2.5, 8]);
+      let dist = 0;
+      for (let i = 1; i < trail.length; i++) {
+        const a = trail[i - 1];
+        const b = trail[i];
+        const life = 1 - (now - b.t) / TRAIL_MS;
+        ctx.lineDashOffset = -dist;
+        ctx.strokeStyle = `rgba(176, 143, 78, ${life})`;
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.stroke();
+        dist += Math.hypot(b.x - a.x, b.y - a.y);
+      }
+      ctx.setLineDash([]);
+      ctx.lineDashOffset = 0;
     };
 
     const resize = () => {
@@ -277,6 +386,7 @@ export default function HeroSection() {
           ctx.fillRect(cx - R, cy - R, R * 2, R * 2);
           ctx.globalCompositeOperation = "source-over";
         }
+        drawTrail();
       }
 
       drawParticles(true);
@@ -313,11 +423,9 @@ export default function HeroSection() {
         <motion.div className="hero-glow" aria-hidden="true" style={{ x: gx, y: gy }} />
       )}
 
-      {/* Painel marinho atrás da vitrine, com manchas de luz em movimento */}
+      {/* Painel marinho atrás da vitrine, com manchas de luz em movimento (desktop) */}
       <div className="hero-panel" aria-hidden="true">
-        <span className="hero-blob hero-blob--gold" />
-        <span className="hero-blob hero-blob--sky" />
-        <span className="hero-blob hero-blob--royal" />
+        <PanelLights />
       </div>
 
       <canvas className="hero-fx" ref={fxRef} aria-hidden="true" />
@@ -384,6 +492,10 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
         >
+          {/* No celular/tablet o painel vira uma faixa atrás do carrossel */}
+          <div className="hero-band" aria-hidden="true">
+            <PanelLights />
+          </div>
           <HeroShowcase />
         </motion.div>
       </div>
