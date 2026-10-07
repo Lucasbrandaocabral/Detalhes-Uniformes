@@ -224,18 +224,55 @@ html, body {
   transform: scale(1.05);
 }
 
+/* Itens que só existem no menu mobile */
+.nav-index,
+.nav-menu-footer {
+  display: none;
+}
+
+.menu-icon {
+  background: none;
+  border: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.navbar.menu-open {
+  z-index: 3000; /* acima do botão do chatbot */
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ======= MENU MOBILE ======= */
+@keyframes menuItemIn {
+  from { opacity: 0; transform: translateX(-18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
 @media (max-width: 992px) {
   .nav-menu {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #ffffff;
+    height: calc(100dvh - 100%);
+    overflow-y: auto;
     flex-direction: column;
-    padding: 20px;
-    display: none; 
+    gap: 0;
+    padding: 28px 24px 32px;
+    display: none;
+    color: #ffffff;
+    border-top: 2px solid var(--c-accent);
+
+    /* Mesmo painel marinho do hero, com luz dourada no canto */
+    background-color: var(--c-navy-deep);
+    background-image:
+      radial-gradient(circle at 100% 0%, rgba(194, 160, 99, 0.2), transparent 45%),
+      radial-gradient(circle at 0% 100%, rgba(91, 139, 196, 0.22), transparent 50%),
+      repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0, rgba(255, 255, 255, 0.035) 1px, transparent 1px, transparent 30px),
+      linear-gradient(160deg, var(--c-navy) 0%, var(--c-navy-deep) 70%);
   }
-  
+
   .nav-menu.active {
     display: flex;
     animation: slideInMenu 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
@@ -246,25 +283,114 @@ html, body {
     animation: slideOutMenu 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
   }
 
-  .nav-menu .nav-link {
-    color: var(--c-navy);
-    padding: 15px 10px;
-    text-align: center;
-    opacity: 1;
+  .navbar .nav-menu .nav-link {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 18px 4px;
+    border-bottom: 1px solid rgba(233, 215, 176, 0.16);
+    color: #ffffff;
+    font-family: var(--ff-title);
+    font-size: 1.45rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: left;
+    opacity: 0;
     animation: none;
   }
-  
+
+  .nav-menu.active .nav-link {
+    animation: menuItemIn 0.45s cubic-bezier(0.21, 0.47, 0.32, 0.98) forwards;
+    animation-delay: calc(var(--i) * 60ms + 120ms);
+  }
+
+  .navbar .nav-menu .nav-link:hover,
+  .navbar .nav-menu .nav-link:active {
+    color: var(--c-accent);
+  }
+
+  .nav-menu .nav-link::after {
+    display: none;
+  }
+
+  .nav-index {
+    display: inline;
+    font-family: var(--ff-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--c-accent);
+  }
+
+  .nav-menu-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: auto;
+    padding-top: 32px;
+    opacity: 0;
+  }
+
+  .nav-menu.active .nav-menu-footer {
+    animation: fadeInItem 0.5s ease-out 0.5s forwards;
+  }
+
+  .nav-menu-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    border-radius: var(--radius);
+    background-color: #25D366;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+  .nav-menu-whatsapp:hover {
+    background-color: #1ebc5a;
+    color: #ffffff;
+  }
+
+  .nav-menu-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 22px;
+  }
+
+  .nav-menu-contacts a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--ff-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: #E9D7B0;
+    text-decoration: none;
+  }
+  .nav-menu-contacts a:hover {
+    color: #ffffff;
+  }
+
   .menu-icon {
     display: block;
   }
-  
+
   .chat-button span {
-    display: none; 
+    display: none;
   }
   .chat-button {
     padding: 10px;
   }
-  .navbar:not(.scrolled) .nav-link {
-  color: var(--c-navy);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu.active .nav-link,
+  .nav-menu.active .nav-menu-footer {
+    animation: none;
+    opacity: 1;
+  }
 }

@@ -133,16 +133,16 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(12, 37, 86, 0.3);
-  background: rgba(255, 255, 255, 0.7);
-  color: var(--c-navy);
+  border: 1px solid rgba(233, 215, 176, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
   cursor: pointer;
   transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 .showcase-btn:hover {
-  background: var(--c-navy);
-  border-color: var(--c-navy);
-  color: #ffffff;
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  color: var(--c-navy-deep);
 }
 .showcase-btn:focus-visible {
   outline: 2px solid var(--c-accent);
@@ -160,16 +160,16 @@
   font-family: var(--ff-mono);
   font-size: 0.75rem;
   letter-spacing: 0.12em;
-  color: var(--c-navy);
+  color: #ffffff;
 }
 .showcase-count em {
   font-style: normal;
-  color: var(--c-gray);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .showcase-bar {
   height: 2px;
-  background: var(--c-line);
+  background: rgba(255, 255, 255, 0.18);
   border-radius: 2px;
   overflow: hidden;
 }
