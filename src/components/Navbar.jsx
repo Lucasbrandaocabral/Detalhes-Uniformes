@@ -61,10 +61,10 @@ export default function Navbar() {
         </a>
 
         <nav className={`nav-menu ${isMenuOpen ? 'active' : ''} ${isMenuClosing ? 'closing' : ''}`}>
-          <a href="#about-us" className="nav-link" onClick={handleLinkClick}>Quem Somos</a>
-          <a href="#services" className="nav-link" onClick={handleLinkClick}>Serviços</a>
           <a href="#tecidos" className="nav-link" onClick={handleLinkClick}>Materiais</a>
           <a href="#testimonials" className="nav-link" onClick={handleLinkClick}>Depoimentos</a>
+          <a href="#about-us" className="nav-link" onClick={handleLinkClick}>Quem Somos</a>
+          <a href="#services" className="nav-link" onClick={handleLinkClick}>Serviços</a>
           <a href="#contact" className="nav-link" onClick={handleLinkClick}>Contato</a>
         </nav>
 
