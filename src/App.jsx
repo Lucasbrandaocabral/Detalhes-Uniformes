@@ -18,6 +18,12 @@ function App() {
       <section id="hero">
         <Hero />
       </section>
+      <section id="tecidos">
+        <TecidosSection />
+      </section>
+      <section id="testimonials">
+        <TestimonialsSection />
+      </section>
       <section id="about-us">
         <AboutSection />
       </section>
@@ -30,12 +36,6 @@ function App() {
       </section>
       <section id="about">
         <WhyChoose />
-      </section>
-      <section id="tecidos">
-        <TecidosSection />
-      </section>
-      <section id="testimonials">
-        <TestimonialsSection />
       </section>
       <section id="contact">
         <ContactSection />
