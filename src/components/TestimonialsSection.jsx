@@ -40,6 +40,9 @@ const logosData = [
   { id: 4, src: '/assets/logos/colegio-inovacao.png', alt: "Colégio Inovação" },
   { id: 5, src: '/assets/logos/colegio-mania-de-aprender.png', alt: "Colégio Mania de Aprender" },
   { id: 6, src: '/assets/logos/colegio-mega-visao.png', alt: "Colégio Mega Visão" },
+  { id: 7, src: '/assets/logos/colegio-campos-piaget.png', alt: "Colégio Campos Piaget" },
+  { id: 8, src: '/assets/logos/colegio-evangelico-nova-jerusalem.png', alt: "Colégio Evangélico Nova Jerusalém" },
+  { id: 9, src: '/assets/logos/colegio-evangelico-da-cidade.png', alt: "Colégio Evangélico da Cidade" },
 ];
 
 function StarRating({ count }) {
