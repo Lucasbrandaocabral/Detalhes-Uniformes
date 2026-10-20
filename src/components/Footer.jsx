@@ -28,6 +28,7 @@ export default function Footer() {
           <h4>Navegação</h4>
           <ul>
             <li><a href="#tecidos">Materiais</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
             <li><a href="#testimonials">Depoimentos</a></li>
             <li><a href="#about-us">Quem Somos</a></li>
             <li><a href="#services">Serviços</a></li>
