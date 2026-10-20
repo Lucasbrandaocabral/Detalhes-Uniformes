@@ -6,6 +6,7 @@ import StatsSection from "./components/StatsSection";
 import Services from "./components/Services";
 import WhyChoose from "./components/WhyChoose";
 import TecidosSection from "./components/TecidosSection";
+import PortfolioSection from "./components/PortfolioSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import ContactSection from "./components/ContactSection";
 import Chatbot from "./components/Chatbot";
@@ -20,6 +21,9 @@ function App() {
       </section>
       <section id="tecidos">
         <TecidosSection />
+      </section>
+      <section id="portfolio">
+        <PortfolioSection />
       </section>
       <section id="testimonials">
         <TestimonialsSection />

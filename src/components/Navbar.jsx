@@ -12,6 +12,7 @@ const whatsappInfo = {
 
 const navLinks = [
   { href: '#tecidos', label: 'Materiais' },
+  { href: '#portfolio', label: 'Portfólio' },
   { href: '#testimonials', label: 'Depoimentos' },
   { href: '#about-us', label: 'Quem Somos' },
   { href: '#services', label: 'Serviços' },
